@@ -8,7 +8,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/beers/"><span class="glyphicon glyphicon-home"></span></a>
+      <a class="navbar-brand" href="/"><span class="glyphicon glyphicon-home"></span></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -16,6 +16,8 @@
       <ul class="nav navbar-nav">
         <li><a href="#">Description <span class="sr-only"></span></a></li>
         <li><a href="#">Search/Map <span class="sr-only"></span></a></li>
+        <li><a href="/beers/">Beers <span class="sr-only"></span></a></li>
+        <li><a href="/breweries/">Breweries <span class="sr-only"></span></a></li>
 
 <!-- ADD IF STATEMENT TO REMOVE CREATE OPTION FOR GUESTS -->
           <li class="dropdown">
@@ -23,7 +25,7 @@
             <ul class="dropdown-menu" role="menu">
               <li><a href="{{{ action('BeersController@create') }}}"><span class="glyphicon glyphicon-plus"></span>Beer</a></li>
               <li class="divider"></li>
-              <li><a href="#"><span class="glyphicon glyphicon-plus"></span>Brewery</a></li>
+              <li><a href="{{{ action('BreweriesController@create') }}}"><span class="glyphicon glyphicon-plus"></span>Brewery</a></li>
               <li class="divider"></li>
               <li><a href="#"><span class="glyphicon glyphicon-plus"></span>Bar/Restaurant/Store</a></li>
             </ul>
