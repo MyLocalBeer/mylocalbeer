@@ -1,0 +1,1 @@
+/vagrant/sites/jasonsmylocalbeer.dev/app/views/breweries/show.blade.php
