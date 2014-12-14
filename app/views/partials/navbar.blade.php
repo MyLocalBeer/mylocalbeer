@@ -8,45 +8,35 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Brand</a>
+      <a class="navbar-brand" href="/beers/"><span class="glyphicon glyphicon-home"></span></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Link</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="{{{ action('BeersController@create') }}}">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
-          </ul>
-        </li>
+        <li><a href="#">Description <span class="sr-only"></span></a></li>
+        <li><a href="#">Search/Map <span class="sr-only"></span></a></li>
+
+<!-- ADD IF STATEMENT TO REMOVE CREATE OPTION FOR GUESTS -->
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-plus"></span>CREATE</a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="{{{ action('BeersController@create') }}}"><span class="glyphicon glyphicon-plus"></span>Beer</a></li>
+              <li class="divider"></li>
+              <li><a href="#"><span class="glyphicon glyphicon-plus"></span>Brewery</a></li>
+              <li class="divider"></li>
+              <li><a href="#"><span class="glyphicon glyphicon-plus"></span>Bar/Restaurant/Store</a></li>
+            </ul>
+          </li>
+
       </ul>
-      <form class="navbar-form navbar-left" role="search">
-        <div class="form-group">
-          <input type="text" name="search" id="search" class="form-control" placeholder="Search" action="PostsController@index" method="GET">
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form>
+      
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </li>
+        @if (Auth::guest())
+          <li><a href="/login"><span class="glyphicon glyphicon-user"></span>Log In</a></li>
+        @else
+          <li><a href="/logout"><span class="glyphicon glyphicon-user"></span>Log Out</a></li>
+        @endif
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
