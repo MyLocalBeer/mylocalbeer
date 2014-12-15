@@ -99,9 +99,10 @@ class BeersController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		Beer::destroy($id);
+		$beer = Beer::findOrFail($id);
+		$beer->delete();
 
-		return Redirect::route('beers.index');
+		return Redirect::action('BeersController@index');
 	}
 
 }
