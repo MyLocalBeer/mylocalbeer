@@ -18,7 +18,6 @@ class CreateBreweriesTable extends Migration {
 			$table->string('brewery_name', 55)->unique();
 			$table->string('location', 255);
 			$table->text('story');
-			$table->string('beers', 100)->unique();
 			$table->timestamps();
 		});
 	}

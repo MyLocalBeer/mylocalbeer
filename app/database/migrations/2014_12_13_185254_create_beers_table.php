@@ -19,6 +19,7 @@ class CreateBeersTable extends Migration {
 			$table->string('beer_style', 55);
 			$table->string('abv', 10);
 			$table->text('description', 255);
+			$table->string('brewery_id', 10);
 			$table->integer('posted');
 			$table->timestamps();
 		});
