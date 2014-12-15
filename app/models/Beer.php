@@ -4,10 +4,14 @@ class Beer extends \Eloquent {
 
 	// Add your validation rules here
 	public static $rules = [
-		// 'title' => 'required'
+        'beer_name'=> 'required|max:100',
+        'beer_style'=> 'required|max:55',
+        'abv'=> 'required|max:10',
+        'description'=>'required',
+        'posted'=> 'required|max:11'
 	];
 
 	// Don't forget to fill this array
-	protected $fillable = [];
+	protected $table = 'beers';
 
 }
