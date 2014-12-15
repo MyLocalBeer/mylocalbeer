@@ -42,7 +42,7 @@ class HomeController extends BaseController {
 	public function doLogout()
 	{
 		Auth::logout();
-		return Redirect::view('HomeController@index');
+		return Redirect::action('BeersController@index');
 	}
 
 }
