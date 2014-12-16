@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration {
 			$table->string('password', 255);
 			$table->enum('role', ['admin', 'seeker', 'provider']);
 			$table->string('email', 255)->unique();
-			$table->integer('brewery_id')->unsigned();
+			$table->integer('brewery_id')->unsigned()->nullable();
 			$table->rememberToken();
 			$table->timestamps();
 		});
