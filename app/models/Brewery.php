@@ -12,4 +12,9 @@ class Brewery extends \Eloquent {
 	// Don't forget to fill this array
 	protected $table = 'breweries';
 
+	public function beers()
+	{
+	    return $this->hasMany('Beer');
+	}
+
 }
