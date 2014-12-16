@@ -16,5 +16,10 @@ class Brewery extends \Eloquent {
 	{
 	    return $this->hasMany('Beer');
 	}
+	
+	public function users ()
+	{
+		return $this->belongsTo('User');
+	}
 
 }
