@@ -25,7 +25,8 @@ class UsersTableSeeder extends Seeder {
             'username'=> $faker->name,
             'email'=>$faker->safeEmail,
             'role'=>$roles[$selection],
-            'password'=>$faker->phoneNumber
+            'password'=>$faker->phoneNumber,
+            'brewery_id'=>'1'
 
 			]);
 		}

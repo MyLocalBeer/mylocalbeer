@@ -18,7 +18,7 @@
             <div>
                 {{ $brewery->story }}
             </div>
-            
+            <div>{{ HTML::link("/breweries" . "/" . $brewery->id . '/edit', 'Edit', array('class' => 'btn btn-success btn-xs')) }}</div>
             <button class="btn btn-danger delete-button" data-post-id="{{{$brewery->id}}}">Delete</button>
         </article>
     </div>
