@@ -4,7 +4,7 @@
 <h1>Add Beer</h1>
 
 <div>
-{{ Form::open(array('action' => 'BeersController@store')) }}
+{{ Form::model($beer, (array('action' => ['BeersController@update', $beer->id], 'method' => 'PUT'))) }}
 	<div class="form-group">
 		{{ Form::label('beer_name', 'Name') }}
 		{{ Form::text('beer_name', Input::old('beer_name')) }}
