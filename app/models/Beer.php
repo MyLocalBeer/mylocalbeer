@@ -18,5 +18,10 @@ class Beer extends \Eloquent {
 	{
 		return $this->belongsTo('Brewery');
 	}	
+    
+    public function locations()
+    {
+        return $this->belongsToMany('Location');
+    }
 
 }

@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class AddForeignKeyToUsersTable extends Migration {
+class CreateLocationsTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,9 +12,12 @@ class AddForeignKeyToUsersTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('users', function(Blueprint $table)
+		Schema::create('locations', function(Blueprint $table)
 		{
-			$table->foreign('brewery_id')->references('id')->on('breweries');
+			$table->increments('id');
+			$table->string('address');
+			$table->string('establishment');
+			$table->timestamps();
 		});
 	}
 
@@ -26,10 +29,7 @@ class AddForeignKeyToUsersTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::table('users', function(Blueprint $table)
-		{
-			$table->dropColumn('brewery_id');
-		});
+		Schema::drop('locations');
 	}
 
 }
