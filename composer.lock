@@ -4,8 +4,41 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2f83312173fffc216cbe2def954fa896",
+    "hash": "44f175e7875e2796cc33cd5200e1d2f7",
     "packages": [
+        {
+            "name": "appitventures/phpgmaps",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/appitventures/Phpgmaps.git",
+                "reference": "c5f819704a15a43451551ae465986bb1b98a1a67"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/appitventures/Phpgmaps/zipball/c5f819704a15a43451551ae465986bb1b98a1a67",
+                "reference": "c5f819704a15a43451551ae465986bb1b98a1a67",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "4.2.*",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Appitventures\\Phpgmaps\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Appit Ventures",
+                    "email": "michael@appitventures.com"
+                }
+            ],
+            "time": "2014-06-29 22:02:58"
+        },
         {
             "name": "classpreloader/classpreloader",
             "version": "1.0.2",
@@ -1740,7 +1773,8 @@
     ],
     "minimum-stability": "stable",
     "stability-flags": {
-        "fzaninotto/faker": 20
+        "fzaninotto/faker": 20,
+        "appitventures/phpgmaps": 20
     },
     "prefer-stable": false,
     "platform": [

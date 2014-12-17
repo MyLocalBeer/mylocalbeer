@@ -1,4 +1,6 @@
 @extends('layouts.master')
+@section('topscript')
+<?php echo $map['js']; ?>
 @section('content')
 <div id='body'>
 	
@@ -49,6 +51,7 @@
  -->
 		<h1>Map</h1>
 </div>
+<?php echo $map['html']; ?>
 @stop
 
 @section('bottomscript')
