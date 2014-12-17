@@ -1,0 +1,58 @@
+body {
+	/*Background image compliments of subtlepatterns.com*/
+	background-image: url('/pics/black_paper.png');
+	background-attachment: fixed;
+	color: white;
+}
+
+.centered-text{
+	text-align: center;
+}
+
+.line {
+	border-bottom: 2px solid white;
+}
+
+.text-center{
+	text-align: center;
+}
+
+h3 {
+	font-family: 'Lobster', cursive;
+	color: #dfdfdd;
+	font-size: 3em;
+}
+
+.text-color {
+	color: black;
+	
+	font-family: 'Droid Serif', serif;
+}
+
+#logo{
+	margin-top: 70px;
+	float: none;
+	margin-bottom: 70px;
+}
+
+#main {
+/*	margin-bottom: 10px;
+*/	margin-top: 20px;
+	background-image: url('/pics/Tap.jpg');
+}
+
+#thehow{
+	margin-top: 20px;
+	background-image: url("/pics/purty_wood.png");
+
+}
+
+#how {
+	margin-top: 30px;
+}
+
+#how-section{
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding: 20px
+}
