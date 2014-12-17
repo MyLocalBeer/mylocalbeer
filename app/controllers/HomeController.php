@@ -17,7 +17,8 @@ class HomeController extends BaseController {
 
 	public function showWelcome()
 	{
-		return View::make('hello');
+        $data['map'] = $this->mapData();
+		return View::make('hello')->with($data);
 	}
 
 	public function showLogin()
@@ -44,6 +45,27 @@ class HomeController extends BaseController {
 		Auth::logout();
 		return Redirect::action('BeersController@index');
 	}
+    
+    private function mapData()
+    {
+        // $this->load->library('googlemaps');
+
+        $config['center'] = '37.4419, -122.1419';
+        $config['zoom'] = 'auto';
+        Gmaps::initialize($config);
+
+        $marker = array();
+        $marker['position'] = '37.429, -122.1419';
+        Gmaps::add_marker($marker);
+        // $data = array();
+        return Gmaps::create_map();
+        
+        // return $data;
+
+        // return View::make('hello')->with($data);
+
+        // $this->load->view('view_file', $data);
+    }
 
 
 }
