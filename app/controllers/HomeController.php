@@ -45,4 +45,5 @@ class HomeController extends BaseController {
 		return Redirect::action('BeersController@index');
 	}
 
+
 }
