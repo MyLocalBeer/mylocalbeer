@@ -1,10 +1,14 @@
+/*start css for master */
+
 body {
 	/*Background image compliments of subtlepatterns.com*/
 	background-image: url('/pics/black_paper.png');
 	background-attachment: fixed;
 	color: white;
 }
+/*end css for master*/
 
+/*START CSS FOR HELLO.BLADE*/
 .centered-text{
 	text-align: center;
 }
@@ -45,11 +49,11 @@ h3 {
 	margin-top: 20px;
 	background-image: url("/pics/purty_wood.png");
 	width: 100%;
-	height: 524px;
+	height: 640px;
 	background-attachment: fixed;
-	display: none;
-	overflow-y: hidden;
-}
+/*	display: none;
+*//*	overflow-y: hidden;
+*/}
 
 #how {
 	margin-top: 30px;
@@ -60,3 +64,5 @@ h3 {
 	margin-bottom: 10px;
 	padding: 20px
 }
+
+/*END CSS FOR HELLO.BLADE*/
