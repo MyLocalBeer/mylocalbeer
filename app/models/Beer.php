@@ -14,4 +14,14 @@ class Beer extends \Eloquent {
 	// Don't forget to fill this array
 	protected $table = 'beers';
 
+	public function breweries()
+	{
+		return $this->belongsTo('Brewery');
+	}	
+    
+    public function locations()
+    {
+        return $this->belongsToMany('Location');
+    }
+
 }

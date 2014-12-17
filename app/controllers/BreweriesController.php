@@ -31,16 +31,10 @@ class BreweriesController extends \BaseController {
 	 */
 	public function store()
 	{
-		$validator = Validator::make($data = Input::all(), Brewery::$rules);
 
-		if ($validator->fails())
-		{
-			return Redirect::back()->withErrors($validator)->withInput();
-		}
+		$brewery = new Brewery();
+		return $this->saveBrewery($brewery);
 
-		Brewery::create($data);
-
-		return Redirect::route('breweries.index');
 	}
 
 	/**
@@ -53,7 +47,7 @@ class BreweriesController extends \BaseController {
 	{
 		$brewery = Brewery::findOrFail($id);
 
-		return View::make('breweries.show', compact('brewery'));
+		return View::make('breweries.index', compact('brewery'));
 	}
 
 	/**
@@ -77,18 +71,8 @@ class BreweriesController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		$brewery = Brewery::findOrFail($id);
-
-		$validator = Validator::make($data = Input::all(), Brewery::$rules);
-
-		if ($validator->fails())
-		{
-			return Redirect::back()->withErrors($validator)->withInput();
-		}
-
-		$brewery->update($data);
-
-		return Redirect::route('breweries.index');
+		$brewery = Brewery::find($id);
+		return $this->saveBrewery($brewery);
 	}
 
 	/**
@@ -99,9 +83,22 @@ class BreweriesController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		Brewery::destroy($id);
+		$brewery = Brewery::findOrFail($id);
+		$brewery->delete();
 
-		return Redirect::route('breweries.index');
+		return Redirect::action('BreweriesController@index');
+	}
+
+	public function saveBrewery(Brewery $brewery)
+	{
+		
+		$brewery->brewery_name = Input::get('brewery_name');
+		$brewery->location  = Input::get('location');
+		$brewery->story  = Input::get('story');
+		$brewery->save();
+
+		Session::flash('successMessage', "Brewery saved successfully");
+		return Redirect::action('BreweriesController@index');
 	}
 
 }

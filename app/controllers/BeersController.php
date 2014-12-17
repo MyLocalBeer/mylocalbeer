@@ -31,16 +31,8 @@ class BeersController extends \BaseController {
 	 */
 	public function store()
 	{
-		$validator = Validator::make($data = Input::all(), Beer::$rules);
-
-		if ($validator->fails())
-		{
-			return Redirect::back()->withErrors($validator)->withInput();
-		}
-
-		Beer::create($data);
-
-		return Redirect::route('beers.index');
+		$beer = new Beer();
+		return $this->saveBeer($beer);
 	}
 
 	/**
@@ -53,7 +45,7 @@ class BeersController extends \BaseController {
 	{
 		$beer = Beer::findOrFail($id);
 
-		return View::make('beers.show', compact('beer'));
+		return View::make('beers.index', compact('beer'));
 	}
 
 	/**
@@ -77,18 +69,8 @@ class BeersController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		$beer = Beer::findOrFail($id);
-
-		$validator = Validator::make($data = Input::all(), Beer::$rules);
-
-		if ($validator->fails())
-		{
-			return Redirect::back()->withErrors($validator)->withInput();
-		}
-
-		$beer->update($data);
-
-		return Redirect::route('beers.index');
+		$beer = Beer::find($id);
+		return $this->saveBeer($beer);
 	}
 
 	/**
@@ -102,6 +84,20 @@ class BeersController extends \BaseController {
 		$beer = Beer::findOrFail($id);
 		$beer->delete();
 
+		return Redirect::action('BeersController@index');
+	}
+
+	public function saveBeer(Beer $beer)
+	{
+		
+		$beer->beer_name = Input::get('beer_name');
+		$beer->beer_style  = Input::get('beer_style');
+		$beer->abv  = Input::get('abv');
+		$beer->description  = Input::get('description');
+		$beer->brewery_id  = Input::get('brewery_id');
+		$beer->save();
+
+		Session::flash('successMessage', "Beer saved successfully");
 		return Redirect::action('BeersController@index');
 	}
 

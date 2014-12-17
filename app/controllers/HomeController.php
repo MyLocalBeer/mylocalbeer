@@ -26,19 +26,23 @@ class HomeController extends BaseController {
     }
 
 	public function doLogin()
-	{
-		if (Auth::attempt(array('email' => Input::get('email'), 'password' => Input::get('password')))) {
-		    return Redirect::intended('/beers');
-		} else {
-		    Session::flash('errorMessage', 'Failed to authenticate');
-		    return Redirect::back();
-		}
-	}
+    {
+        $email = Input::get('email');
+        $password = Input::get('password');
+
+        if (Auth::attempt(array('email' => $email, 'password' => $password))) {
+            return Redirect::action('BeersController@index');
+        } else {
+            Session::flash('errorMessage', 'Failed to authenticate.');
+
+            return Redirect::back();
+        }
+    }
 
 	public function doLogout()
 	{
 		Auth::logout();
-		return Redirect::view('HomeController@index');
+		return Redirect::action('BeersController@index');
 	}
 
 }

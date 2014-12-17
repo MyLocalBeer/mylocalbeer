@@ -35,16 +35,18 @@
           <li><a href="/breweries/">The Breweries <span class="sr-only"></span></a></li>
 
   <!-- ADD IF STATEMENT TO REMOVE CREATE OPTION FOR GUESTS -->
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-plus"></span>CREATE</a>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="{{{ action('BeersController@create') }}}"><span class="glyphicon glyphicon-plus"></span>Beer</a></li>
-                <li class="divider"></li>
-                <li><a href="{{{ action('BreweriesController@create') }}}"><span class="glyphicon glyphicon-plus"></span>Brewery</a></li>
-                <li class="divider"></li>
-                <li><a href="#"><span class="glyphicon glyphicon-plus"></span>Bar/Restaurant/Store</a></li>
-              </ul>
-            </li>
+        @if (Auth::check())
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-plus"></span>CREATE</a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="{{{ action('BeersController@create') }}}"><span class="glyphicon glyphicon-plus"></span>Beer</a></li>
+              <li class="divider"></li>
+              <li><a href="{{{ action('BreweriesController@create') }}}"><span class="glyphicon glyphicon-plus"></span>Brewery</a></li>
+              <li class="divider"></li>
+              <li><a href="#"><span class="glyphicon glyphicon-plus"></span>Bar/Restaurant/Store</a></li>
+            </ul>
+          </li>
+        @endif
 
         </ul>
         

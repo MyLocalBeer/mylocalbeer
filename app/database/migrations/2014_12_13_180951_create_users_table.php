@@ -17,8 +17,10 @@ class CreateUsersTable extends Migration {
 			$table->increments('id');
 			$table->string('username', 20)->unique();
 			$table->string('password', 255);
+			$table->integer('brewery_id')->unique();
 			$table->enum('role', ['admin', 'seeker', 'provider']);
 			$table->string('email', 255)->unique();
+			$table->rememberToken();
 			$table->timestamps();
 		});
 	}
