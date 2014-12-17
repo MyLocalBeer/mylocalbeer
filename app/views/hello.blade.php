@@ -60,11 +60,22 @@
 
 		$(window).scroll(function() {
 			end_position = $(window).scrollTop();
-			if(end_position > 650) {
+			console.log(end_position);
+			if(end_position > 160) {
 				$('#thehow').fadeIn();
 			}
 		});
 
+//this function is not working correctly. Will scroll the how text but removes the hidden css element and the position fixed hides the photo. Need to find a new css for the "how" photo. 
+		$(window).scroll(function() {
+			end_position = $(window).scrollTop();
+			if(end_position > 620) {
+				$('#how').css('position', 'fixed');
+				$('#thehow').css('overflow-y', 'scroll');
+			}
+		});
+
+// hits mark on y in query attach 2 styles overflow-y: scroll and postion: fixed for the banner
 
 	</script>
 @stop
