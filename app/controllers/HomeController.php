@@ -45,4 +45,19 @@ class HomeController extends BaseController {
 		return Redirect::action('BeersController@index');
 	}
 
+	public function setUsernameAttribute($value)
+	{
+	    $this->attributes['username'] = strtolower($value);
+	}
+
+	public function newUser()
+	{
+		return View::make('new-user');
+	}
+
+	// public funtion saveUser()
+	// {
+
+	// }
+
 }
