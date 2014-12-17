@@ -44,7 +44,11 @@ h3 {
 #thehow{
 	margin-top: 20px;
 	background-image: url("/pics/purty_wood.png");
-
+	width: 100%;
+	height: 524px;
+	background-attachment: fixed;
+	display: none;
+	overflow-y: hidden;
 }
 
 #how {
