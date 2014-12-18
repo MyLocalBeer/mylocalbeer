@@ -8,7 +8,9 @@
 		"laravel/framework": "4.2.*",
 		"way/generators": "~2.0",
 		"fzaninotto/faker": "1.5.*@dev",
-		"appitventures/phpgmaps": "dev-master"
+		"appitventures/phpgmaps": "dev-master",
+		"guzzlehttp/guzzle": "~4.0"
+
 	},
 	"autoload": {
 		"classmap": [
@@ -18,7 +20,8 @@
 			"app/database/migrations",
 			"app/database/seeds",
 			"app/tests/TestCase.php"
-		]
+		],
+		"psr-0": {"Beerguide\\Brewerydb\\": "src"}
 	},
 	"scripts": {
 		"post-install-cmd": [
@@ -38,3 +41,5 @@
 	},
 	"minimum-stability": "stable"
 }
+
+

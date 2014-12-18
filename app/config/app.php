@@ -122,7 +122,8 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		'Way\Generators\GeneratorsServiceProvider',
-		'Appitventures\Phpgmaps\PhpgmapsServiceProvider'
+		'Appitventures\Phpgmaps\PhpgmapsServiceProvider',
+		'Beerguide\Brewerydb\BrewerydbServiceProvider'
 
 	),
 
@@ -191,6 +192,7 @@ return array(
 		'Validator'         => 'Illuminate\Support\Facades\Validator',
 		'View'              => 'Illuminate\Support\Facades\View',
 		'Gmaps' => 'Appitventures\Phpgmaps\Facades\Phpgmaps',
+		'Brewerydb' => 'Beerguide\Brewerydb\Client'
 
 	),
 
