@@ -51,7 +51,9 @@
  -->
 		<h1>Map</h1>
 </div>
+<div class="map">
 <?php echo $map['html']; ?>
+</div>
 @stop
 
 @section('bottomscript')

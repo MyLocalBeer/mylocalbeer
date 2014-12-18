@@ -50,14 +50,20 @@ class HomeController extends BaseController {
     {
         // $this->load->library('googlemaps');
 
-        $config['center'] = '37.4419, -122.1419';
-        $config['zoom'] = 'auto';
+        $config = array();
+        $config['center'] = 'auto';
+        $config['onboundschanged'] = 'if (!centreGot) {
+            var mapCentre = map.getCenter();
+            marker_0.setOptions({
+                position: new google.maps.LatLng(mapCentre.lat(), mapCentre.lng())
+            });
+        }
+        centreGot = true;';
         Gmaps::initialize($config);
-
+        
         $marker = array();
-        $marker['position'] = '37.429, -122.1419';
         Gmaps::add_marker($marker);
-        // $data = array();
+        
         return Gmaps::create_map();
         
         // return $data;
