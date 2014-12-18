@@ -13,9 +13,12 @@
 
 Route::get('/', 'HomeController@showWelcome');
 
-Route::get('login', 'HomeController@showLogin');
-Route::post('login', 'HomeController@doLogin');
-Route::get('logout', 'HomeController@doLogout');
+// Route::get('login', 'HomeController@showLogin');
+// Route::post('login', 'HomeController@doLogin');
+// Route::get('logout', 'HomeController@doLogout');
+
+Route::get('new-user', 'HomeController@newUser');
+Route::post('new-user', 'HomeController@saveUser');
 
 Route::resource('beers', 'BeersController');
 Route::resource('breweries', 'BreweriesController');
@@ -41,3 +44,16 @@ Route::resource('breweries', 'BreweriesController');
 //     $map = Gmaps::create_map();
 //     echo "<html><head>".$map['js']."</head><body>".$map['html']."</body></html>";
 // });
+//
+
+// Confide routes
+Route::get('users/create', 'UsersController@create');
+Route::post('users', 'UsersController@store');
+Route::get('users/login', 'UsersController@login');
+Route::post('users/login', 'UsersController@doLogin');
+Route::get('users/confirm/{code}', 'UsersController@confirm');
+Route::get('users/forgot_password', 'UsersController@forgotPassword');
+Route::post('users/forgot_password', 'UsersController@doForgotPassword');
+Route::get('users/reset_password/{token}', 'UsersController@resetPassword');
+Route::post('users/reset_password', 'UsersController@doResetPassword');
+Route::get('users/logout', 'UsersController@logout');

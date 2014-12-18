@@ -20,31 +20,6 @@ class HomeController extends BaseController {
         $data['map'] = $this->mapData();
 		return View::make('hello')->with($data);
 	}
-
-	public function showLogin()
-    {
-        return View::make('login');
-    }
-
-	public function doLogin()
-    {
-        $email = Input::get('email');
-        $password = Input::get('password');
-
-        if (Auth::attempt(array('email' => $email, 'password' => $password))) {
-            return Redirect::action('BeersController@index');
-        } else {
-            Session::flash('errorMessage', 'Failed to authenticate.');
-
-            return Redirect::back();
-        }
-    }
-
-	public function doLogout()
-	{
-		Auth::logout();
-		return Redirect::action('BeersController@index');
-	}
     
     private function mapData()
     {
@@ -72,6 +47,5 @@ class HomeController extends BaseController {
 
         // $this->load->view('view_file', $data);
     }
-
 
 }
