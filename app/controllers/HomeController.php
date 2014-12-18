@@ -78,9 +78,21 @@ class HomeController extends BaseController {
 		return View::make('new-user');
 	}
 
-	// public funtion saveUser()
-	// {
+	public function saveUser(User $user)
+	{
+		$user->username = Input::get('username');
+		$user->password = Input::get('password');
+		$user->email = Input::get('email');
+		$user->brewery_id = Input::get('brewery_id');
+		$user->save();
 
-	// }
+		return Redirect::action('BeersController@index');
+	}
+
+	public function storeUser()
+	{
+		$user = new User();
+		return $this->savePost($user);
+	}
 
 }
