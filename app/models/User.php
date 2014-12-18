@@ -1,13 +1,11 @@
 <?php
 
-use Illuminate\Auth\UserTrait;
-use Illuminate\Auth\UserInterface;
-use Illuminate\Auth\Reminders\RemindableTrait;
-use Illuminate\Auth\Reminders\RemindableInterface;
+use Zizaco\Confide\ConfideUser;
+use Zizaco\Confide\ConfideUserInterface;
+use Zizaco\Entrust\HasRole;
 
-class User extends Eloquent implements UserInterface, RemindableInterface {
-
-	use UserTrait, RemindableTrait;
+class User extends Eloquent implements ConfideUserInterface {
+	use HasRole, ConfideUser;
 
 	/**
 	 * The database table used by the model.
@@ -23,15 +21,25 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	 */
 	protected $hidden = array('password', 'remember_token');
 
-	public function setPasswordAttribute($value)
-	{
-		$this->attributes['password'] = Hash::make($value);
-	}
-
 	public function breweries()
 	{
 		return $this->belongsTo('Brewery');
-	}	
+	}
+
+	// public function getRememberToken()
+	// {
+	//     return $this->remember_token;
+	// }
+
+	// public function setRememberToken($value)
+	// {
+	//     $this->remember_token = $value;
+	// }
+
+	// public function getRememberTokenName()
+	// {
+	//     return 'remember_token';
+	// }
 
 
 }

@@ -8,7 +8,9 @@
 		"laravel/framework": "4.2.*",
 		"way/generators": "~2.0",
 		"fzaninotto/faker": "1.5.*@dev",
-		"appitventures/phpgmaps": "dev-master"
+		"appitventures/phpgmaps": "dev-master",
+		"zizaco/confide": "~4.0@dev",
+		"zizaco/entrust": "1.2.*@dev"
 	},
 	"autoload": {
 		"classmap": [
