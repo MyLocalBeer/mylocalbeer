@@ -7,3 +7,4 @@
             {{-- Renders the signup form of Confide --}}
             {{ Confide::makeLoginForm()->render(); }} 
         </div> 
+@stop

@@ -3,6 +3,31 @@
 <?php echo $map['js']; ?>
 @section('content')
 <div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">Create Account</h4>
+      </div>
+      <div class="modal-body">
+        <div class='row'>
+        	<div class="maincontent col-md-4"> 
+            	<h1>Signup</h1> 
+           		{{-- Renders the signup form of Confide --}}
+            	{{ Confide::makeSignupForm()->render(); }} 
+        	</div> 
+    	</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 	
 	<div id='main' class='row'>
 		<div >

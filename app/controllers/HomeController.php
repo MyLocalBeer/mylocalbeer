@@ -48,4 +48,9 @@ class HomeController extends BaseController {
         // $this->load->view('view_file', $data);
     }
 
+    public function welcome()
+    {
+        return View::make('welcome');
+    }
+
 }
