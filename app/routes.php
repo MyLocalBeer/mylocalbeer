@@ -19,6 +19,7 @@ Route::get('breweries/results', 'BreweriesController@request');
 Route::resource('beers', 'BeersController');
 Route::resource('breweries', 'BreweriesController');
 
+Route::get('welcome', 'HomeController@welcome');
 // Route::get('/testmap', function(){
 //     $config = array();
 //     $config['center'] = 'auto';
@@ -53,5 +54,6 @@ Route::post('users/forgot_password', 'UsersController@doForgotPassword');
 Route::get('users/reset_password/{token}', 'UsersController@resetPassword');
 Route::post('users/reset_password', 'UsersController@doResetPassword');
 Route::get('users/logout', 'UsersController@logout');
+
 
 
