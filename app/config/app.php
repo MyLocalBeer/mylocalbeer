@@ -123,7 +123,6 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		'Way\Generators\GeneratorsServiceProvider',
 		'Appitventures\Phpgmaps\PhpgmapsServiceProvider',
-		'Beerguide\Brewerydb\BrewerydbServiceProvider'
 		'Zizaco\Confide\ServiceProvider',
 		'Zizaco\Entrust\EntrustServiceProvider'
 
@@ -193,15 +192,11 @@ return array(
 		'URL'               => 'Illuminate\Support\Facades\URL',
 		'Validator'         => 'Illuminate\Support\Facades\Validator',
 		'View'              => 'Illuminate\Support\Facades\View',
-<<<<<<< HEAD
 		'Gmaps' => 'Appitventures\Phpgmaps\Facades\Phpgmaps',
-		'Brewerydb' => 'Beerguide\Brewerydb\Client'
-=======
 		'Gmaps' 			=> 'Appitventures\Phpgmaps\Facades\Phpgmaps',
 		'Confide' 			=> 'Zizaco\Confide\Facade',
 		'Entrust'			=> 'Zizaco\Entrust\EntrustFacade'
 
->>>>>>> 841116ee298ef2fb39efebe6bf4ed37e3336ed31
 
 	),
 

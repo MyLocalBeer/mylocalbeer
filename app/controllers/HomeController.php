@@ -42,21 +42,21 @@ class HomeController extends BaseController {
 
     }
     
-    public function index()
-    {
+    // public function index()
+    // {
 
-        $var = Input::get('search');
-        $queries = Location::with('beer');
+    //     $var = Input::get('search');
+    //     $queries = Location::with('beer');
 
-        if (Input::has('search')){
-            $queries->where('beer_name', 'like', "%$var%")
-                    ->where('abv'), 'like', "%$var%")
-                    ->orWhere('beer_style', 'like', "%$var%");
-        }
+    //     if (Input::has('search')){
+    //         $queries->where('beer_name', 'like', "%$var%")
+    //                 ->where('abv'), 'like', "%$var%")
+    //                 ->orWhere('beer_style', 'like', "%$var%");
+    //     }
 
-        $locations = $queries->orderBy('establishment', 'asc')->paginate(5);
-        return View::make('hello')->with('locations', $locations)->with('var', $var);
+    //     $locations = $queries->orderBy('establishment', 'asc')->paginate(5);
+    //     return View::make('hello')->with('locations', $locations)->with('var', $var);
 
-    }
+    // }
 
 }

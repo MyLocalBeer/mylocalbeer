@@ -4,11 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-<<<<<<< HEAD
-    "hash": "457a74725ca47062d0472b1244780b9f",
-=======
-    "hash": "f06cbf2520ba98dcdb152c11c283107e",
->>>>>>> 841116ee298ef2fb39efebe6bf4ed37e3336ed31
+    "hash": "63428ae2b16cbb4efafa9f5debfbd862",
     "packages": [
         {
             "name": "appitventures/phpgmaps",
@@ -230,7 +226,6 @@
                 "fixtures"
             ],
             "time": "2014-12-18 07:45:28"
-<<<<<<< HEAD
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -349,8 +344,6 @@
                 "stream"
             ],
             "time": "2014-08-17 21:15:53"
-=======
->>>>>>> 841116ee298ef2fb39efebe6bf4ed37e3336ed31
         },
         {
             "name": "ircmaxell/password-compat",

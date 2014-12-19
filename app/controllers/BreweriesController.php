@@ -7,30 +7,30 @@ class BreweriesController extends \BaseController {
 	 *
 	 * @return Response
 	 */
-	public function brewerySearch()
-	{
-		$query = new Brewerydb('87522b7cbc8a1591f44316b5822c9a9a');
-		// If API is online
-		if ($query) {
-		    $params = array(
-		        'format' => 'json',
-		        'locality' => 'San Antonio',
-		        'region'=> 'Texas'
-		        'p' => $page_number,
-		        'status' => 'verified'
-	    );
-	    $results = $query->request('locations', $params, 'GET', true);
-	    $number_of_pages = $results['numberOfPages'];
-	    $total_results = $results['totalResults'];
-	    $per_page = count($results['data']);
+	// public function brewerySearch()
+	// {
+	// 	$query = new Brewerydb('87522b7cbc8a1591f44316b5822c9a9a');
+	// 	// If API is online
+	// 	if ($query) {
+	// 	    $params = array(
+	// 	        'format' => 'json',
+	// 	        'locality' => 'San Antonio',
+	// 	        'region'=> 'Texas'
+	// 	        'p' => $page_number,
+	// 	        'status' => 'verified'
+	//     );
+	//     $results = $query->request('locations', $params, 'GET', true);
+	//     $number_of_pages = $results['numberOfPages'];
+	//     $total_results = $results['totalResults'];
+	//     $per_page = count($results['data']);
 
-	    $data = $results['data'];
-	    $locations = Paginator::make($data, $total_results, $per_page);
-		} else {
-		    // API is offline
-		return View::make('search')->with($locations);
-		}
-	}
+	//     $data = $results['data'];
+	//     $locations = Paginator::make($data, $total_results, $per_page);
+	// 	} else {
+	// 	    // API is offline
+	// 	return View::make('search')->with($locations);
+	// 	}
+	// }
 
 	public function index()
 	{
