@@ -7,31 +7,23 @@ class BreweriesController extends \BaseController {
 	 *
 	 * @return Response
 	 */
-	// public function brewerySearch()
-	// {
-	// 	$query = new Brewerydb('87522b7cbc8a1591f44316b5822c9a9a');
-	// 	// If API is online
-	// 	if ($query) {
-	// 	    $params = array(
-	// 	        'format' => 'json',
-	// 	        'locality' => 'San Antonio',
-	// 	        'region'=> 'Texas'
-	// 	        'p' => $page_number,
-	// 	        'status' => 'verified'
-	//     );
-	//     $results = $query->request('locations', $params, 'GET', true);
-	//     $number_of_pages = $results['numberOfPages'];
-	//     $total_results = $results['totalResults'];
-	//     $per_page = count($results['data']);
-
-	//     $data = $results['data'];
-	//     $locations = Paginator::make($data, $total_results, $per_page);
-	// 	} else {
-	// 	    // API is offline
-	// 	return View::make('search')->with($locations);
-	// 	}
-	// }
-
+	public function request()
+	{
+		$bdb = new Pintlabs_Service_Brewerydb($_ENV['BREWERYDB_API_KEY']);
+		$bdb->setFormat('json'); // if you want to get php back.  'xml' and 'json' are also valid options.
+		$params = ['locality' => 'San Antonio'];
+	    // The first argument to request() is the endpoint you want to call
+	    // 'brewery/BrvKTz', 'beers', etc.
+	    // The third parameter is the HTTP method to use (GET, PUT, POST, or DELETE)
+    	$results = $bdb->request('locations', $params, 'GET'); // where $params is a keyed array of parameters to send with the API call.
+    	dd($results['data']);
+	}
+	
+	public function search ()
+	{
+		return View::make('breweries.search');
+	}
+	
 	public function index()
 	{
 		$breweries = Brewery::all();

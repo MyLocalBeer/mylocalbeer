@@ -7,11 +7,12 @@
 	"require": {
 		"laravel/framework": "4.2.*",
 		"way/generators": "~2.0",
-		"fzaninotto/faker": "1.5.*@dev",
+		"fzaninotto/faker": "1.4.*",
 		"appitventures/phpgmaps": "dev-master",
 		"guzzlehttp/guzzle": "~4.0",
-		"zizaco/confide": "~4.0@dev",
-		"zizaco/entrust": "1.2.*@dev"
+		"zizaco/confide": "~4.0",
+		"zizaco/entrust": "1.2.*",
+		"beerguide/brewerydb": "dev-master"
 	},
 	
 	"autoload": {
@@ -21,7 +22,8 @@
 			"app/models",
 			"app/database/migrations",
 			"app/database/seeds",
-			"app/tests/TestCase.php"
+			"app/tests/TestCase.php",
+			"app/lib"
 		]
 
 	},
@@ -41,7 +43,21 @@
 	"config": {
 		"preferred-install": "dist"
 	},
-	"minimum-stability": "stable"
+	"minimum-stability": "stable",
+	"repositories" : [
+		{
+			"type": "package",
+			"package" : {
+				"name": "beerguide/brewerydb",
+				"version": "dev-master",
+				"source": {
+					"type": "git",
+					"url": "https://github.com/milports/composer-brewerydb.git",
+					"reference": "master"
+				}
+			}
+		}
+	]
 }
 
 

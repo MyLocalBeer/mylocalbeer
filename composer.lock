@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "63428ae2b16cbb4efafa9f5debfbd862",
+    "hash": "d0eff51958ededd4a61fb1fc8c501db0",
     "packages": [
         {
             "name": "appitventures/phpgmaps",
@@ -38,6 +38,17 @@
                 }
             ],
             "time": "2014-06-29 22:02:58"
+        },
+        {
+            "name": "beerguide/brewerydb",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/milports/composer-brewerydb.git",
+                "reference": "master"
+            },
+            "type": "library",
+            "time": "2014-06-05 22:49:13"
         },
         {
             "name": "classpreloader/classpreloader",
@@ -180,16 +191,16 @@
         },
         {
             "name": "fzaninotto/faker",
-            "version": "dev-master",
+            "version": "v1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/fzaninotto/Faker.git",
-                "reference": "d82603adc7aa0f7d47c2e767fd33636803f4117a"
+                "reference": "010c7efedd88bf31141a02719f51fb44c732d5a0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/d82603adc7aa0f7d47c2e767fd33636803f4117a",
-                "reference": "d82603adc7aa0f7d47c2e767fd33636803f4117a",
+                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/010c7efedd88bf31141a02719f51fb44c732d5a0",
+                "reference": "010c7efedd88bf31141a02719f51fb44c732d5a0",
                 "shasum": ""
             },
             "require": {
@@ -201,13 +212,14 @@
             },
             "type": "library",
             "extra": {
-                "branch-alias": {
-                    "dev-master": "1.5.x-dev"
-                }
+                "branch-alias": [
+
+                ]
             },
             "autoload": {
-                "psr-4": {
-                    "Faker\\": "src/Faker/"
+                "psr-0": {
+                    "Faker": "src/",
+                    "Faker\\PHPUnit": "test/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -225,7 +237,7 @@
                 "faker",
                 "fixtures"
             ],
-            "time": "2014-12-18 07:45:28"
+            "time": "2014-06-04 14:43:02"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -2082,10 +2094,8 @@
     ],
     "minimum-stability": "stable",
     "stability-flags": {
-        "fzaninotto/faker": 20,
         "appitventures/phpgmaps": 20,
-        "zizaco/confide": 20,
-        "zizaco/entrust": 20
+        "beerguide/brewerydb": 20
     },
     "prefer-stable": false,
     "platform": [
