@@ -13,13 +13,6 @@
 
 Route::get('/', 'HomeController@showWelcome');
 
-// Route::get('login', 'HomeController@showLogin');
-// Route::post('login', 'HomeController@doLogin');
-// Route::get('logout', 'HomeController@doLogout');
-
-Route::get('new-user', 'HomeController@newUser');
-Route::post('new-user', 'HomeController@saveUser');
-
 Route::resource('beers', 'BeersController');
 Route::resource('breweries', 'BreweriesController');
 
@@ -57,3 +50,5 @@ Route::post('users/forgot_password', 'UsersController@doForgotPassword');
 Route::get('users/reset_password/{token}', 'UsersController@resetPassword');
 Route::post('users/reset_password', 'UsersController@doResetPassword');
 Route::get('users/logout', 'UsersController@logout');
+
+
