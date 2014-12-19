@@ -15,7 +15,7 @@ class UsersTableSeeder extends Seeder {
         $user->save();
         
 		$faker = Faker::create();
-        $roles = ['admin', 'seeker', 'provider'];
+        $roles = ['seeker', 'provider'];
 
 		foreach(range(1, 10) as $index)
 		{
