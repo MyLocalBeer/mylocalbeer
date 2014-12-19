@@ -2,7 +2,7 @@
 @section('topscript')
 <?php echo $map['js']; ?>
 @section('content')
-<div id='body'>
+<div>
 	
 	<div id='main' class='row'>
 		<div >
