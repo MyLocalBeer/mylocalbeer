@@ -29,6 +29,7 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
+          <li><a href="/">Home <span class="sr-only"></span></a></li>
           <li><a href="#">The How <span class="sr-only"></span></a></li>
           <li><a href="#">Find <span class="sr-only"></span></a></li>
           <li><a href="/beers/">The Beer <span class="sr-only"></span></a></li>
@@ -52,9 +53,10 @@
         
         <ul class="nav navbar-nav navbar-right">
           @if (Auth::guest())
-            <li><a href="/login"><span class="glyphicon glyphicon-user"></span>Log In</a></li>
+            <li><a href="/users/create"><span class="glyphicon glyphicon-plus"></span>New User</a></li>
+            <li><a href="/users/login"><span class="glyphicon glyphicon-user"></span>Log In</a></li>
           @else
-            <li><a href="/logout"><span class="glyphicon glyphicon-user"></span>Log Out</a></li>
+            <li><a href="/users/logout"><span class="glyphicon glyphicon-user"></span>Log Out</a></li>
           @endif
         </ul>
       </div><!-- /.navbar-collapse -->
