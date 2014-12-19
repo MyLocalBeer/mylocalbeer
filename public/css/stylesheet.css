@@ -115,11 +115,16 @@ h3 {
 }
 /*END CSS FOR BREWERIES.BLADE*/
 
+#modal-content{
+	color: black;
+}
+
 /*START CSS FOR USERS.CREATE*/
 
 #create{
-/*	background-image: url('/pics/Tap.jpg');
-*/}
+	margin-top: 30px;
+
+}
 
 /*END CSS FOR USERS.CREATE*/
 

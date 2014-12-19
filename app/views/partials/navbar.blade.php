@@ -54,8 +54,7 @@
         <ul class="nav navbar-nav navbar-right">
           @if (Auth::guest())
           <!-- Button trigger modal -->
-            <button type="button" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-plus"></span>New User</button>
-            <li><a href="/users/create"><span class="glyphicon glyphicon-plus"></span>New User</a></li>
+          <button type="button"  data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-plus"></span>New User</button>
             <li><a href="/users/login"><span class="glyphicon glyphicon-user"></span>Log In</a></li>
           @else
             <li><a href="/users/logout"><span class="glyphicon glyphicon-user"></span>Log Out</a></li>

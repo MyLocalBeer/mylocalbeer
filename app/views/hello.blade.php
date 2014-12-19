@@ -9,21 +9,18 @@
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title" id="myModalLabel">Create Account</h4>
-      </div>
       <div class="modal-body">
-        <div class='row'>
-        	<div class="maincontent col-md-4"> 
+        <div class='row' id='modal-content'>
+        	<div class="col-md-4 col-md-offset-4"> 
             	<h1>Signup</h1> 
-           		{{-- Renders the signup form of Confide --}}
-            	{{ Confide::makeSignupForm()->render(); }} 
-        	</div> 
+            </div>	
+			
+			@include('partials.create_form') 
+        	 
     	</div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-default btn-xs" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
@@ -75,14 +72,6 @@
 <!-- 		<div class='line'></div>
  -->
 		<h1>Map</h1>
-</div>
-<div>
-<form class="navbar-form navbar-left" role="search">
-    <div class="form-group">
-      <input type="text" class="form-control" placeholder="Search">
-    </div>
-    <button type="submit" class="btn btn-default">Submit</button>
-  </form>
 </div>
 <div class="map">
 <?php echo $map['html']; ?>
