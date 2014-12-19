@@ -192,6 +192,7 @@ return array(
 		'URL'               => 'Illuminate\Support\Facades\URL',
 		'Validator'         => 'Illuminate\Support\Facades\Validator',
 		'View'              => 'Illuminate\Support\Facades\View',
+		'Gmaps' => 'Appitventures\Phpgmaps\Facades\Phpgmaps',
 		'Gmaps' 			=> 'Appitventures\Phpgmaps\Facades\Phpgmaps',
 		'Confide' 			=> 'Zizaco\Confide\Facade',
 		'Entrust'			=> 'Zizaco\Entrust\EntrustFacade'
