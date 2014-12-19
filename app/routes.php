@@ -13,6 +13,9 @@
 
 Route::get('/', 'HomeController@showWelcome');
 
+Route::get('breweries/search', 'BreweriesController@search');
+Route::get('breweries/results', 'BreweriesController@request');
+
 Route::resource('beers', 'BeersController');
 Route::resource('breweries', 'BreweriesController');
 

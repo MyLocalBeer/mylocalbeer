@@ -7,6 +7,23 @@ class BreweriesController extends \BaseController {
 	 *
 	 * @return Response
 	 */
+	public function request()
+	{
+		$bdb = new Pintlabs_Service_Brewerydb($_ENV['BREWERYDB_API_KEY']);
+		$bdb->setFormat('json'); // if you want to get php back.  'xml' and 'json' are also valid options.
+		$params = ['locality' => 'San Antonio'];
+	    // The first argument to request() is the endpoint you want to call
+	    // 'brewery/BrvKTz', 'beers', etc.
+	    // The third parameter is the HTTP method to use (GET, PUT, POST, or DELETE)
+    	$results = $bdb->request('locations', $params, 'GET'); // where $params is a keyed array of parameters to send with the API call.
+    	dd($results['data']);
+	}
+	
+	public function search ()
+	{
+		return View::make('breweries.search');
+	}
+	
 	public function index()
 	{
 		$breweries = Brewery::all();
