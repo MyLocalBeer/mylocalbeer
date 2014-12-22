@@ -3,28 +3,6 @@
 <?php echo $map['js']; ?>
 @section('content')
 <div>
-
-
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-body">
-        <div class='row' id='modal-content'>
-        	<div class="col-md-4 col-md-offset-4"> 
-            	<h1>Signup</h1> 
-            </div>	
-			
-			@include('partials.create_form') 
-        	 
-    	</div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default btn-xs" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
 	
 	<div id='main' class='row'>
 		<div >
@@ -32,50 +10,53 @@
 		</div>
 	</div>
 
-<!-- <div class='line'></div>
- -->
- <div id='thehow'>
-	<div class="row">
-		<div>
-			<img id="how" class='center-block'  src="/pics/how.png">
+	<a name='TheHow'></a>
+	<div id='thehow'>
+		<div class="row">
+			<div>
+				<img id="how" class='center-block'  src="/pics/how.png">
+			</div>
+		</div>
+
+		<div id='how-section'>
+
+			<div class='container row center-block text-color text-center'>
+				<div class='col-md-4 col-md-offset-4'>
+					<h3>Search by Brewery</h3>
+					<p> 
+						Choose from any local brewery listed. From there you can see what specific beers are being served.
+					</p>
+				</div>
+			</div>
+			<div class='container row center-block text-color text-center'>
+				<div class='col-md-4 col-md-offset-4'>
+					<h3>Find Whats Close</h3>
+					<p> 
+						We will show you the bars or restuarants that are close and who have the local beer you are looking for.
+					</p>
+				</div>
+			</div>
+			<div class='container row center-block text-color text-center'>
+				<div class='col-md-4 col-md-offset-4'>
+					<h3>Drink Up</h3>
+					<p> 
+						We know you don't need any explanation for this part, so drink responsibly and cheers to local beer!
+					</p>
+				</div>
+			</div>
 		</div>
 	</div>
 
-	<div id='how-section'>
-
-		<div class='container row center-block text-color text-center'>
-			<div class='col-md-4 col-md-offset-4'>
-				<h3>Search by Brewery</h3>
-				<p> 
-					Choose from any local brewery listed. From there you can see what specific beers are being served.
-				</p>
-			</div>
-		</div>
-		<div class='container row center-block text-color text-center'>
-			<div class='col-md-4 col-md-offset-4'>
-				<h3>Find Whats Close</h3>
-				<p> 
-					We will show you the bars or restuarants that are close and who have the local beer you are looking for.
-				</p>
-			</div>
-		</div>
-		<div class='container row center-block text-color text-center'>
-			<div class='col-md-4 col-md-offset-4'>
-				<h3>Drink Up</h3>
-				<p> 
-					We know you don't need any explanation for this part, so drink responsibly and cheers to local beer!
-				</p>
-			</div>
-		</div>
-	</div>
-</div>
-<!-- 		<div class='line'></div>
- -->
+	<a name='find'></a>
+	<div>
 		<h1>Map</h1>
+	</div>
 </div>
 <div class="map">
 <?php echo $map['html']; ?>
 </div>
+
+
 @stop
 
 @section('bottomscript')
