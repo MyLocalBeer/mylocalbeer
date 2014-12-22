@@ -47,11 +47,12 @@ class UsersController extends Controller
             return Redirect::action('HomeController@welcome')
                 ->with('notice', Lang::get('confide::confide.alerts.account_created'));
         } else {
-            $error = $user->errors()->all(':message');
+            $errors = $user->errors();
 
             return Redirect::action('UsersController@create')
                 ->withInput(Input::except('password'))
-                ->with('error', $error);
+                ->withErrors($errors);
+                // ->with('error', $error);
         }
     }
 
@@ -123,7 +124,7 @@ class UsersController extends Controller
      */
     public function forgotPassword()
     {
-        return View::make('/users/forgot_password');
+        return View::make('users.forgot_password');
     }
 
     /**
@@ -154,8 +155,7 @@ class UsersController extends Controller
      */
     public function resetPassword($token)
     {
-        return View::make(Config::get('confide::reset_password_form'))
-                    ->with('token', $token);
+        return View::make('users.reset_password_form')->with('token', $token);
 
     }
 

@@ -113,6 +113,15 @@ h3 {
 	color: #cf132e;
 	padding: 2px;
 }
+
+.modal-header{
+	border: none;
+	padding: 10px;
+}
+
+.modal-background{
+	background-image: url('/pics/purty_wood.png');
+}
 /*END CSS FOR BREWERIES.BLADE*/
 
 #modal-content{
@@ -127,4 +136,12 @@ h3 {
 }
 
 /*END CSS FOR USERS.CREATE*/
+
+/*START CSS FOR BEERS INDEX*/
+
+#thebeer{
+	margin-top: 20px;
+}
+
+/*END CSS FOR BEERS INDEX*/
 

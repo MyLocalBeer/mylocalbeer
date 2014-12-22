@@ -1,9 +1,11 @@
 @extends('layouts.master')
 @section('content')
 
-        <div class="maincontent"> 
-        	<h1>AHAHAHAHA MORE H1s</h1>
-            <h1>Forgot Password</h1> 
-            {{-- Renders the signup form of Confide --}}
-            {{ Confide::makeForgotPasswordForm()->render(); }} 
-        </div> 
+    <div class="row maincontent"> 
+    	<div class='col-md-4 col-md-offset-4'>
+       		<h1>Enter Email</h1>
+       		<p>We will send you an email shortly so you can reset your password.</p>
+        	{{-- Renders the signup form of Confide --}}
+        	{{ Confide::makeForgotPasswordForm()->render(); }} 
+   		</div>
+	</div> 
