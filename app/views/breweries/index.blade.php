@@ -11,29 +11,54 @@
                 <div class='name-local'>
                     <div class='row'>
                         <div class="brewery-name col-md-4">
-                            {{ $brewery->brewery_name }}
+                            {{ $brewery->name }}
                         </div>
                     </div>
                     <div class='row'>
                         <div class='col-md-3 brewery-info abel-font'>
-                            {{ $brewery->location }}
+                            {{ $brewery->streetAddress}}
                         </div>
                     </div>  
-                </div>
-                <div class='row'>    
-                    <div class='col-md-9 brewery-info abel-font'>
-                        {{ $brewery->story }}
                     </div>
-                </div>
-                <div class='row'>
-                    @if(Auth::check())
-                    <div class='col-md-2 col-md-offset-10'>
-                        <a href="{{ action('BreweriesController@edit', $brewery->id) }}"><span class='glyphicon glyphicon-pencil' aria-hidden='true'></span></a>
-                       
-                        <button class='delete_button' data-post-id="{{{$brewery->id}}}"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+                    <div class='row'>    
+                        <div class='col-md-9 brewery-info abel-font'>
+                            {{ $brewery->locality }}
+                        </div>
                     </div>
-                    @endif
-                </div>
+                    <div class='row'>    
+                        <div class='col-md-9 brewery-info abel-font'>
+                            {{ $brewery->region }}
+                        </div>
+                    </div>
+                    <div class='row'>    
+                        <div class='col-md-9 brewery-info abel-font'>
+                            {{ $brewery->postalCode }}
+                        </div>
+                    </div>
+                    <div class='row'>    
+                        <div class='col-md-9 brewery-info abel-font'>
+                            {{ $brewery->yearOpened }}
+                        </div>
+                    </div>
+                    <div class='row'>    
+                        <div class='col-md-9 brewery-info abel-font'>
+                            {{ $brewery->story }}
+                        </div>
+                    </div>
+                    <div class='row'>    
+                        <div class='col-md-9 brewery-info abel-font'>
+                            {{ $brewery->website }}
+                        </div>
+                    </div>
+                    <div class='row'>
+                        @if(Auth::check())
+                        <div class='col-md-2 col-md-offset-10'>
+                            <a href="{{ action('BreweriesController@edit', $brewery->id) }}"><span class='glyphicon glyphicon-pencil' aria-hidden='true'></span></a>
+                           
+                            <button class='delete_button' data-post-id="{{{$brewery->id}}}"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+                        </div>
+                        @endif
+                    </div>
             </article>
         </div>
         <div class='row'>
