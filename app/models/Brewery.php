@@ -4,9 +4,8 @@ class Brewery extends \Eloquent {
 
 	// Add your validation rules here
 	public static $rules = [
-		'brewery_name'=> 'required|max:55',
+		'brewery_name'=> 'required|max:255',
 		'location'=> 'required|max:255',
-		'story'=> 'required|max:100'
 	];
 
 	// Don't forget to fill this array
