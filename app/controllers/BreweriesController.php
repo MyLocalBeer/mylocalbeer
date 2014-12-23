@@ -11,7 +11,7 @@ class BreweriesController extends \BaseController {
 	    (
             function()
             {
-                if(!Entrust::hasRole('admin')) {
+                if(Entrust::hasRole('admin')) {
                    return Redirect::to('/');
                 }
             }, array('except' =>array('index', 'show'))
