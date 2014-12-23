@@ -26,6 +26,16 @@ class User extends Eloquent implements ConfideUserInterface {
 		return $this->belongsTo('Brewery');
 	}
 
+	public function hasRole($name)
+	{
+	    foreach($this->roles as $role)
+	    {
+	    	if($role->name == $name) return true;
+	    }
+	    
+	    return false;
+	}
+
 	// public function getRememberToken()
 	// {
 	//     return $this->remember_token;

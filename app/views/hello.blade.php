@@ -58,7 +58,7 @@
 			      {{ Form::open(['action' => ['BeersController@index'], 'method' => 'GET', 'name' => 'search',]) }}
 
 			      <div class='form-group'>
-			      	<input type='search' class='form-control' id='search' placeholder='Search by Beer'>
+			      	<input type='search' class='form-control' name="search" id='search' placeholder='Search by Beer Name or Style'>
 			      </div>
 
 			      {{ Form::submit('Search', array('class' => 'btn btn-primary btn-sm')) }}
