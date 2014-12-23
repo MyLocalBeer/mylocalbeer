@@ -2,7 +2,7 @@
 @section('topscript')
 <?php echo $map['js']; ?>
 @section('content')
-<div id='body'>
+<div>
 	
 	<div id='main' class='row'>
 		<div >
@@ -10,58 +10,58 @@
 		</div>
 	</div>
 
-<!-- <div class='line'></div>
- -->
- <div id='thehow'>
-	<div class="row">
-		<div>
-			<img id="how" class='center-block'  src="/pics/how.png">
+	<a name='TheHow'></a>
+	<div id='thehow'>
+		<div class="row">
+			<div>
+				<img id="how" class='center-block'  src="/pics/how.png">
+			</div>
+		</div>
+
+		<div id='how-section'>
+
+			<div class='container row center-block text-color text-center'>
+				<div class='col-md-4 col-md-offset-4'>
+					<h3>Search by Brewery</h3>
+					<p> 
+						Choose from any local brewery listed. From there you can see what specific beers are being served.
+					</p>
+				</div>
+			</div>
+			<div class='container row center-block text-color text-center'>
+				<div class='col-md-4 col-md-offset-4'>
+					<h3>Find Whats Close</h3>
+					<p> 
+						We will show you the bars or restuarants that are close and who have the local beer you are looking for.
+					</p>
+				</div>
+			</div>
+			<div class='container row center-block text-color text-center'>
+				<div class='col-md-4 col-md-offset-4'>
+					<h3>Drink Up</h3>
+					<p> 
+						We know you don't need any explanation for this part, so drink responsibly and cheers to local beer!
+					</p>
+				</div>
+			</div>
 		</div>
 	</div>
 
-	<div id='how-section'>
-
-		<div class='container row center-block text-color text-center'>
-			<div class='col-md-4 col-md-offset-4'>
-				<h3>Search by Brewery</h3>
-				<p> 
-					Choose from any local brewery listed. From there you can see what specific beers are being served.
-				</p>
-			</div>
-		</div>
-		<div class='container row center-block text-color text-center'>
-			<div class='col-md-4 col-md-offset-4'>
-				<h3>Find Whats Close</h3>
-				<p> 
-					We will show you the bars or restuarants that are close and who have the local beer you are looking for.
-				</p>
-			</div>
-		</div>
-		<div class='container row center-block text-color text-center'>
-			<div class='col-md-4 col-md-offset-4'>
-				<h3>Drink Up</h3>
-				<p> 
-					We know you don't need any explanation for this part, so drink responsibly and cheers to local beer!
-				</p>
-			</div>
-		</div>
-	</div>
-</div>
-<!-- 		<div class='line'></div>
- -->
+	<a name='find'></a>
+	<div>
 		<h1>Map</h1>
-</div>
-<div>
-<form class="navbar-form navbar-left" role="search">
-    <div class="form-group">
-      <input type="text" class="form-control" placeholder="Search">
-    </div>
-    <button type="submit" class="btn btn-default">Submit</button>
-  </form>
+	</div>
 </div>
 <div class="map">
 <?php echo $map['html']; ?>
 </div>
+<div class="col-xs-6 col-sm-3" role="navigation">
+      {{ Form::open(['action' => ['BeersController@index'], 'method' => 'GET', 'name' => 'search']) }}
+      {{ Form::text('search', null, ['placeholder' => 'Search by Beer Name'])}}
+      {{ Form::submit('Search') }}
+      {{ Form::close() }}
+</div>
+
 @stop
 
 @section('bottomscript')

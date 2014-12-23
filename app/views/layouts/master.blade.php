@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
 	<!-- Google Fonts -->
-	<link href='http://fonts.googleapis.com/css?family=Lobster|Droid+Serif:400,700,400italic,700italic|Pacifico' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Lobster|Droid+Serif:400,700,400italic,700italic|Pacifico' rel='stylesheet' type='text/css'><link href='http://fonts.googleapis.com/css?family=Abel|Josefin+Sans' rel='stylesheet' type='text/css'>
 	<!-- local CSS -->
     <link rel="stylesheet" href="/css/stylesheet.css">
 

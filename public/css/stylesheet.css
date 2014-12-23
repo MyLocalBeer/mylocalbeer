@@ -5,6 +5,7 @@ body {
 	background-image: url('/pics/black_paper.png');
 	background-attachment: fixed;
 	color: white;
+	margin-top: 40px;
 }
 /*end css for master*/
 
@@ -14,7 +15,7 @@ body {
 }
 
 .line {
-	border-bottom: 2px solid white;
+	border-bottom: 2px solid black;
 }
 
 .text-center{
@@ -28,8 +29,7 @@ h3 {
 }
 
 .text-color {
-	color: black;
-	
+	color: black;	
 	font-family: 'Droid Serif', serif;
 }
 
@@ -70,3 +70,78 @@ h3 {
 }
 
 /*END CSS FOR HELLO.BLADE*/
+
+/*START CSS FOR BREWERIES.BLADE*/
+
+#body {
+	background-image: url('/pics/purty_wood.png');
+	background-attachment: fixed;
+	width: 100%;
+}
+
+#thebreweries {
+	margin-top: 20px;
+}
+#breweries {
+	margin-right: 80px;
+	margin-left: 80px;
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+
+.abel-font{
+	font-family: 'Abel', sans-serif;
+	font-size: 15px;
+}
+
+.name-local{
+	margin-bottom: 15px;
+}
+.brewery-name {
+	font-family: 'Droid Serif', serif;
+	font-size: 2em;	
+	color: #dfdfdd;
+}
+
+.brewery-info{
+	color: black;
+}
+
+.delete_button:hover, .delete_button:focus, .delete_button{
+	background-color: initial;
+	border: none;
+	color: #cf132e;
+	padding: 2px;
+}
+
+.modal-header{
+	border: none;
+	padding: 10px;
+}
+
+.modal-background{
+	background-image: url('/pics/purty_wood.png');
+}
+/*END CSS FOR BREWERIES.BLADE*/
+
+#modal-content{
+	color: black;
+}
+
+/*START CSS FOR USERS.CREATE*/
+
+#create{
+	margin-top: 30px;
+
+}
+
+/*END CSS FOR USERS.CREATE*/
+
+/*START CSS FOR BEERS INDEX*/
+
+#thebeer{
+	margin-top: 20px;
+}
+
+/*END CSS FOR BEERS INDEX*/
+
