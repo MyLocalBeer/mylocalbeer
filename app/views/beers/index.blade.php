@@ -8,36 +8,59 @@
     </div>
 
     @foreach($beers as $beer)
-        <div >
+        <div id='breweries'>
             <article>
-                <div>
-                    {{ $beer->beer_name }}
+                <div class='name-local'>
+                    <div class='row'>
+                        <div class='brewery-name col-md-4 col-md-offset-4'>
+                            {{ $beer->beer_name }}
+                        </div>
+                    </div>
                 </div>
-
-                <div>
-                    {{ $beer->beer_style }}
+                <div class='row'>
+                    <div class='col-md-4 col-md-offset-4 brewery-info abel-font'>
+                        {{ $beer->beer_style }}
+                    </div>
                 </div>
-                
-                <div>
-                    {{ $beer->abv }}
+                <div class='row'>    
+                    <div class='col-md-4 col-md-offset-4 brewery-info abel-font'>
+                        {{ $beer->abv }}
+                    </div>
                 </div>
-                
-                <div>
-                    {{ $beer->description }}
+                <div class='row'>   
+                    <div class='col-md-4 col-md-offset-4 brewery-info abel-font'>
+                        {{ $beer->description }}
+                    </div>
+                </div> 
+                <div class='row'>  
+                    <div class='col-md-4 col-md-offset-4 brewery-info abel-font'>
+                        {{ $beer->posted }}
+                    </div>
+                </div> 
+                <div class='row'>
+                    @if(Auth::check())
+                    <div class='col-md-2 col-md-offset-10'>
+                        {{ HTML::link('/beers' . "/" . $beer->id . '/edit', 'Edit', array('class' => 'btn btn-success btn-xs')) }}
+                    </div>
+                    <button class="btn btn-danger delete-button" data-post-id="{{{$beer->id}}}">Delete</button>
+                    @endif
                 </div>
-                
-                <div>
-                    {{ $beer->posted }}
-                </div>
-                <div>{{ HTML::link('/beers' . "/" . $beer->id . '/edit', 'Edit', array('class' => 'btn btn-success btn-xs')) }}</div>
-                <button class="btn btn-danger delete-button" data-post-id="{{{$beer->id}}}">Delete</button>
             </article>
+        </div>
+        <div class='row'>
+            <div class='col-md-6 col-md-offset-3'>
+                <div class='line'></div>
+            </div>
         </div>
     @endforeach
 
-</div>
+
     {{Form::open(['method'=>'delete', 'id'=>'delete-form'])}}
     {{Form::close()}}
+
+
+
+</div>
 @stop
 
 @section('bottomscript')
