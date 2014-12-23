@@ -2,6 +2,22 @@
 
 class BreweriesController extends \BaseController {
 
+	public function __construct()
+	{
+		parent::__construct();
+	    // require csrf token for all post, delete, and put actions
+	    $this->beforeFilter('adminAuth', array('except'=>array('show', 'index')));
+	    $this->beforeFilter
+	    (
+            function()
+            {
+                if(!Entrust::hasRole('admin')) {
+                   return Redirect::to('/');
+                }
+            }, array('except' =>array('index', 'show'))
+        );
+	}
+
 	/**
 	 * Display a listing of breweries
 	 *

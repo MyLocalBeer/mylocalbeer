@@ -55,7 +55,12 @@
 <div class="map">
 <?php echo $map['html']; ?>
 </div>
-
+<div class="col-xs-6 col-sm-3" role="navigation">
+      {{ Form::open(['action' => ['BeersController@index'], 'method' => 'GET', 'name' => 'search']) }}
+      {{ Form::text('search', null, ['placeholder' => 'Search by Beer Name'])}}
+      {{ Form::submit('Search') }}
+      {{ Form::close() }}
+</div>
 
 @stop
 
