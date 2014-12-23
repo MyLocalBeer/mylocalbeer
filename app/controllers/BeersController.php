@@ -11,7 +11,7 @@ class BeersController extends \BaseController {
 	    (
             function()
             {
-                if(!Entrust::hasRole('admin') && !Entrust::hasRole('provider')) {
+                if(Entrust::hasRole('admin') || Entrust::hasRole('provider')) {
                    return Redirect::to('/');
                 }
             }, array('except' =>array('index', 'show'))
@@ -28,12 +28,10 @@ class BeersController extends \BaseController {
 		$query = Beer::with('breweries');
 		$search = Input::get('search');
 		
-		if(Input::has('search')){
-			$searchTerms = explode(' ', $search);
-			foreach($searchTerms as $term)
-			{
-				$query->where('beer_name', 'like', "%$term%");
-			}
+		if(Input::has('search'))
+		{
+			$query->where('beer_name', 'like', "%{$search}%")
+				  ->orWhere('beer_style', 'like', "%{$search}%");
 		}
 		$beers = $query->orderBy('beer_name', 'ASC')->paginate(10);
 		return View::make('beers.index')->with('beers', $beers)->with('search', $search);
