@@ -47,21 +47,30 @@
 		</div>
 	</div>
 
-	<a name='find'></a>
-	<div>
-		<h1>Map</h1>
+<div id='search'>
+	<div class='container'>
+		<a name='find'></a>
+			<div class='row'>
+				<img class='center-block' id='thesearch' src="/pics/thesearch.png">
+			</div>
+		<div class='row'>
+			<div class="col-md-3 form-group" role="navigation">
+			      {{ Form::open(['action' => ['BeersController@index'], 'method' => 'GET', 'name' => 'search',]) }}
+
+			      <div class='form-group'>
+			      	<input type='search' class='form-control' id='search' placeholder='Search by Beer'>
+			      </div>
+
+			      {{ Form::submit('Search', array('class' => 'btn btn-primary btn-sm')) }}
+
+			      {{ Form::close() }}
+			</div>
+			<div class="map col-md-8 col-md-offset-2">
+			<?php echo $map['html']; ?>
+			</div>
+		</div>
 	</div>
 </div>
-<div class="map">
-<?php echo $map['html']; ?>
-</div>
-<div class="col-xs-6 col-sm-3" role="navigation">
-      {{ Form::open(['action' => ['BeersController@index'], 'method' => 'GET', 'name' => 'search']) }}
-      {{ Form::text('search', null, ['placeholder' => 'Search by Beer Name'])}}
-      {{ Form::submit('Search') }}
-      {{ Form::close() }}
-</div>
-
 @stop
 
 @section('bottomscript')

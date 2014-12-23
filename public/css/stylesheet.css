@@ -65,8 +65,17 @@ h3 {
 	padding: 20px
 }
 
+#search {
+	background-image: url('/pics/transparent-bckground.png');
+	background-attachment: fixed;
+	width: 100%;
+	margin-top: 10px;
+	padding: 10px;
+}
+
 .map{
 	width: 50%;
+	margin: 10px;
 }
 
 /*END CSS FOR HELLO.BLADE*/
