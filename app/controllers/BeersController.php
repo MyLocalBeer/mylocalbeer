@@ -1,6 +1,22 @@
 <?php
 
 class BeersController extends \BaseController {
+	
+	public function __construct()
+	{
+		parent::__construct();
+	    // require csrf token for all post, delete, and put actions
+	    $this->beforeFilter('adminAuth', array('except'=>array('show', 'index')));
+	    $this->beforeFilter
+	    (
+            function()
+            {
+                if(!Entrust::hasRole('admin') && !Entrust::hasRole('provider')) {
+                   return Redirect::to('/');
+                }
+            }, array('except' =>array('index', 'show'))
+        );
+	}
 
 	/**
 	 * Display a listing of beers
@@ -9,9 +25,22 @@ class BeersController extends \BaseController {
 	 */
 	public function index()
 	{
-		$beers = Beer::all();
+		$query = Beer::with('breweries');
+		$search = Input::get('search');
+		
+		if(Input::has('search')){
+			$searchTerms = explode(' ', $search);
+			foreach($searchTerms as $term)
+			{
+				$query->where('beer_name', 'like', "%$term%");
+			}
+		}
+		$beers = $query->orderBy('beer_name', 'ASC')->paginate(10);
+		return View::make('beers.index')->with('beers', $beers)->with('search', $search);
+		
+		// $beers = Beer::all();
 
-		return View::make('beers.index', compact('beers'));
+		// return View::make('beers.index', compact('beers'));
 	}
 
 	/**
@@ -45,7 +74,7 @@ class BeersController extends \BaseController {
 	{
 		$beer = Beer::findOrFail($id);
 
-		return View::make('beers.index', compact('beer'));
+		return View::make('beers.show', compact('beer'));
 	}
 
 	/**

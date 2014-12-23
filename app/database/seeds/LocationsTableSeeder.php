@@ -9,10 +9,10 @@ class LocationsTableSeeder extends Seeder {
 	{
 		$faker = Faker::create();
 
-		foreach(range(1, 10) as $index)
+		foreach(range(1, 20) as $index)
 		{
 			Location::create([
-            'establishment'=> $faker->firstNameFemale,
+            'establishment'=> $faker->firstNameMale . "'s",
             'address'=> $faker->address
 			]);
 		}
