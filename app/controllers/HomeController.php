@@ -50,7 +50,7 @@ class HomeController extends BaseController {
 
     //     if (Input::has('search')){
     //         $queries->where('beer_name', 'like', "%$var%")
-    //                 ->where('abv'), 'like', "%$var%")
+    //                 ->orWhere('abv'), 'like', "%$var%")
     //                 ->orWhere('beer_style', 'like', "%$var%");
     //     }
 
