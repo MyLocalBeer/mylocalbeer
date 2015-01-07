@@ -25,7 +25,7 @@ class CreateBreweriesTable extends Migration {
 			$table->float('latitude');
 			$table->float('longitude');
 			$table->string('website', 55)->unique();
-			$table->string('image', 55);
+			$table->string('image', 255);
 			$table->timestamps();
 		});
 	}

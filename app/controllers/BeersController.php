@@ -48,7 +48,8 @@ class BeersController extends \BaseController {
 	 */
 	public function create()
 	{
-		return View::make('beers.create');
+		$locations = Location::all();
+		return View::make('beers.create')->with('locations', $locations);
 	}
 
 	/**

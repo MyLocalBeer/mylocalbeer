@@ -1,4 +1,10 @@
 @extends('layouts.master')
+@section('topscript')
+<style type="text/css">
+	#beer-locations {
+		color: black;
+	}
+</style>
 @section('content')
 
 <h1>Add Beer</h1>
@@ -32,6 +38,13 @@
 	<div class="form-group">
 		{{ Form::text('abv', Input::old('abv'), array('placeholder'=>'ABV')) }}
 		{{ $errors->first('abv', '<span class="help-block">ABV Is Required</span>'); }}
+	</div>
+	<div class="form-group">
+		<select name="beer-locations" id="beer-locations" class="form-control">
+			@foreach ($locations as $location)
+				<option value="{{ $location->establishment }}">{{ $location->establishment }}</option>
+			@endforeach
+		</select>
 	</div>
 	<div class="form-group">
 		{{ Form::textarea('description', Input::old('description'), array('cols'=>'50', 'rows'=>'10', 'placeholder'=>'Description')) }}
