@@ -109,11 +109,26 @@ h3 {
 .brewery-name {
 	font-family: 'Droid Serif', serif;
 	font-size: 2em;	
-	color: #dfdfdd;
+	color: #f8f1dd;
+	text-align: center;
 }
 
 .brewery-info{
 	color: black;
+}
+
+.brewery-location{
+	text-align: center;
+}
+
+.website{
+	text-align: center;
+}
+
+.brewery-story{
+	font-family: 'Droid Serif', serif;
+	text-align: center;
+
 }
 
 .delete_button:hover, .delete_button:focus, .delete_button{
@@ -152,5 +167,39 @@ h3 {
 	margin-top: 20px;
 }
 
+.beertitle{
+	font-size: 2em;
+}
+
+.beerinfo{
+	font-family: 'Droid Serif', serif;
+
+}
+
 /*END CSS FOR BEERS INDEX*/
+
+/*START CSS FOR WELCOME PAGE*/
+
+.welcome{
+	background-image: url('/pics/purty_wood.png');
+	margin-top: 30px;
+}
+
+#welcomelogo{
+	margin: 20px;
+}
+
+.lobster-text{
+	font-family: 'Lobster', cursive;
+	text-align: center;
+	margin-top: 30px;
+	font-size: 4em;
+}
+
+.droid-serif{
+	font-family: 'Droid Serif', serif;
+	font-size: 2em;
+	color: white;
+}
+/*END CSS FOR WELCOME PAGE*/
 

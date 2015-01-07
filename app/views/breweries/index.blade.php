@@ -10,46 +10,34 @@
             <article>
                 <div class='name-local'>
                     <div class='row'>
-                        <div class="brewery-name col-md-4">
+                        <div class="brewery-name col-md-4 col-md-offset-4">
                             {{ $brewery->name }}
                         </div>
                     </div>
+                    <div class='row'>    
+                        <div class='col-md-4 col-md-offset-4 brewery-info website abel-font'>
+                            {{ $brewery->website }}
+                        </div>
+                    </div>                    
                     <div class='row'>
-                        <div class='col-md-3 brewery-info abel-font'>
+                        <div class='col-md-4 col-md-offset-4 brewery-location brewery-info abel-font'>
                             {{ $brewery->streetAddress}}
-                        </div>
-                    </div>  
-                    </div>
-                    <div class='row'>    
-                        <div class='col-md-9 brewery-info abel-font'>
+
                             {{ $brewery->locality }}
-                        </div>
-                    </div>
-                    <div class='row'>    
-                        <div class='col-md-9 brewery-info abel-font'>
+
                             {{ $brewery->region }}
-                        </div>
-                    </div>
-                    <div class='row'>    
-                        <div class='col-md-9 brewery-info abel-font'>
+                        
                             {{ $brewery->postalCode }}
+
+                            <p>Established {{ $brewery->yearOpened }}</p>
                         </div>
                     </div>
                     <div class='row'>    
-                        <div class='col-md-9 brewery-info abel-font'>
-                            {{ $brewery->yearOpened }}
-                        </div>
-                    </div>
-                    <div class='row'>    
-                        <div class='col-md-9 brewery-info abel-font'>
+                        <div class='col-md-10 col-md-offset-1 brewery-info brewery-story'>
                             {{ $brewery->story }}
                         </div>
                     </div>
-                    <div class='row'>    
-                        <div class='col-md-9 brewery-info abel-font'>
-                            {{ $brewery->website }}
-                        </div>
-                    </div>
+
                     <div class='row'>
                         @if(Auth::check())
                         <div class='col-md-2 col-md-offset-10'>
