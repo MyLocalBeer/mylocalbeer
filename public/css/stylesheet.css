@@ -136,6 +136,7 @@ h3 {
 	border: none;
 	color: #cf132e;
 	padding: 2px;
+	outline: none;
 }
 
 .modal-header{
