@@ -12,28 +12,28 @@
             <article>
                 <div class='name-local'>
                     <div class='row'>
-                        <div class='brewery-name col-md-4 col-md-offset-4'>
+                        <div class='beerinfo beertitle col-md-6 col-md-offset-3'>
                             {{ $beer->beer_name }}
                         </div>
                     </div>
                 </div>
                 <div class='row'>
-                    <div class='col-md-4 col-md-offset-4 brewery-info abel-font'>
+                    <div class='col-md-6 col-md-offset-3 beerinfo'>
                         {{ $beer->beer_style }}
                     </div>
                 </div>
                 <div class='row'>    
-                    <div class='col-md-4 col-md-offset-4 brewery-info abel-font'>
+                    <div class='col-md-6 col-md-offset-3 breerinfo'>
                         {{ $beer->abv }}
                     </div>
                 </div>
                 <div class='row'>   
-                    <div class='col-md-4 col-md-offset-4 brewery-info abel-font'>
+                    <div class='col-md-6 col-md-offset-3 brewery-info abel-font'>
                         {{ $beer->description }}
                     </div>
                 </div> 
                 <div class='row'>  
-                    <div class='col-md-4 col-md-offset-4 brewery-info abel-font'>
+                    <div class='col-md-6 col-md-offset-3 brewery-info abel-font'>
                         {{ $beer->posted }}
                     </div>
                 </div> 

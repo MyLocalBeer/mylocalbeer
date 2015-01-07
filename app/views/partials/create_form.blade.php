@@ -1,5 +1,5 @@
 	<div class='row'>
-		<div class='col-md-6 col-md-offset-3'>
+		<div class='col-md-4 col-md-offset-4'>
 			{{ Form::open(array('action' => 'UsersController@store')) }}
 			  <div class="form-group">
 			    <label for="username">Username</label>
@@ -22,7 +22,7 @@
 			    <input type="password" class='form-control' id="password_confirmation" name='password_confirmation'>
 			  </div>
 			  <div class='row'>
-			  	<div class='col-md-1 col-md-offset-8'>
+			  	<div class='col-md-1 col-md-offset-9'>
 			  		<button type="submit" class="btn btn-info">Submit</button>
 			  	</div>
 			  </div>
