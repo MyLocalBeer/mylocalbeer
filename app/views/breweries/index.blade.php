@@ -18,7 +18,12 @@
                         <div class='col-md-3 brewery-info abel-font'>
                             {{ $brewery->streetAddress}}
                         </div>
-                    </div>  
+                    </div>
+                    </div>
+                    <div class='row'>    
+                        <div class='col-md-9 brewery-info abel-font'>
+                            <img src="{{ $brewery->image }}">
+                        </div>
                     </div>
                     <div class='row'>    
                         <div class='col-md-9 brewery-info abel-font'>
@@ -47,14 +52,14 @@
                     </div>
                     <div class='row'>    
                         <div class='col-md-9 brewery-info abel-font'>
-                            {{ $brewery->website }}
+                            <a href="{{ $brewery->website }}">visit {{ $brewery->name }}</a>
                         </div>
                     </div>
                     <div class='row'>
                         @if(Auth::check())
                         <div class='col-md-2 col-md-offset-10'>
                             <a href="{{ action('BreweriesController@edit', $brewery->id) }}"><span class='glyphicon glyphicon-pencil' aria-hidden='true'></span></a>
-                           
+
                             <button class='delete_button' data-post-id="{{{$brewery->id}}}"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
                         </div>
                         @endif
