@@ -41,6 +41,7 @@
 	</div>
 	<div class="form-group">
 		<select name="beer-locations" id="beer-locations" class="form-control">
+				<option value="" selected disabled>Location</option>
 			@foreach ($locations as $location)
 				<option value="{{ $location->establishment }}">{{ $location->establishment }}</option>
 			@endforeach
