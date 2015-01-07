@@ -49,14 +49,13 @@
 			{{ $errors->first('abv', '<span class="help-block">ABV Is Required</span>'); }}
 		</div>
 	</div>
-	<div class="form-group row">
-		<div class='col-md-3 col-md-offset-4'>
-			<select name="beer-locations" id="beer-locations" class="form-control">
-				@foreach ($locations as $location)
-					<option value="{{ $location->establishment }}">{{ $location->establishment }}</option>
-				@endforeach
-			</select>
-		</div>
+	<div class="form-group">
+		<select name="beer-locations" id="beer-locations" class="form-control">
+				<option value="" selected disabled>Location</option>
+			@foreach ($locations as $location)
+				<option value="{{ $location->establishment }}">{{ $location->establishment }}</option>
+			@endforeach
+		</select>
 	</div>
 	<div class="form-group row">
 		<div class='col-md-5 col-md-offset-4'>
