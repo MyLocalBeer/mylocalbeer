@@ -40,7 +40,7 @@
           <li><a href="/breweries/">The Breweries <span class="sr-only"></span></a></li>
 
   <!-- ADD IF STATEMENT TO REMOVE CREATE OPTION FOR GUESTS -->
-        @if (Auth::check())
+        @if (Entrust::hasRole('Provider'))
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-plus"></span>CREATE</a>
             <ul class="dropdown-menu" role="menu">
