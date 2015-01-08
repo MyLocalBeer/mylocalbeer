@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('topscript')
-<?php echo $map['js']; ?>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGji162SkzFzL4YhHP8gRXqWlBLenkk1A"></script>
 @section('content')
 <div>
 	
@@ -55,7 +55,7 @@
 			</div>
 		<div class='row'>
 			<div class="col-md-3 form-group" role="navigation">
-			      {{ Form::open(['action' => ['BeersController@index'], 'method' => 'GET', 'name' => 'search',]) }}
+			      {{ Form::open(['action' => ['HomeController@index'], 'method' => 'GET', 'name' => 'search',]) }}
 
 			      <div class='form-group'>
 			      	<input type='search' class='form-control' name="search" id='search' placeholder='Search by Beer Name or Style'>
@@ -65,40 +65,57 @@
 
 			      {{ Form::close() }}
 			</div>
-			<div class="map col-md-8 col-md-offset-2">
-			<?php echo $map['html']; ?>
+			<div class="map col-md-8 col-md-offset-2" id="map-canvas">
 			</div>
+			@foreach($locations as $location)
+		        <div id='breweries'>
+		            <article>
+		                <div class='name-local'>
+		                    <div class='row'>
+		                        <div class='beerinfo beertitle col-md-6 col-md-offset-3'>
+		                            {{ $location->establishment }}
+		                        </div>
+		                    </div>
+		                </div>
+		            </article>
+		        </div>
+		    @endforeach
 		</div>
 	</div>
 </div>
 @stop
 
 @section('bottomscript')
-	 <script type="text/javascript">
-	// 	var start_position = $('#thehow').position().top,
-	// 	end_position = null;
+	<script type="text/javascript">
 
-	// 	// console.log(start_position);
+      	function initialize() {
+        	var mapOptions = {
+	         	center: { lat:29.424122, lng:-98.493629 },
+	          	zoom: 8
+	        };
 
-	// 	$(window).scroll(function() {
-	// 		end_position = $(window).scrollTop();
-	// 		console.log(end_position);
-	// 		if(end_position > 160) {
-	// 			$('#thehow').fadeIn();
-	// 		}
-	// 	});
+  		 	var locations = {{ $locations->toJSON() }};
 
-//this function is not working correctly. Will scroll the how text but removes the hidden css element and the position fixed hides the photo. Need to find a new css for the "how" photo. 
-		// $(window).scroll(function() {
-		// 	end_position = $(window).scrollTop();
-		// 	if(end_position > 620) {
-		// 		$('#how').css('position', 'fixed');
-		// 		$('#thehow').css('overflow-y', 'scroll');
-		// 	}
-		// });
+		 	if (!(locations instanceof Array)) {
+		 		locations = [locations];
+		 	}
 
-// hits mark on y in query attach 2 styles overflow-y: scroll and postion: fixed for the banner
+        	var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
+            var bounds = new google.maps.LatLngBounds();
+
+            locations.forEach(function(loc) {
+                var marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(loc.lat, loc.long),
+                    map: map
+                  });
+
+                bounds.extend(marker.position);
+
+                map.fitBounds(bounds);
+            });
+        }
+        google.maps.event.addDomListener(window, 'load', initialize);
 	</script>
 @stop
 

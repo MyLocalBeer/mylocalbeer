@@ -14,11 +14,6 @@
                             {{ $brewery->name }}
                         </div>
                     </div>
-                    <div class='row'>    
-                        <div class='col-md-4 col-md-offset-4 brewery-info website abel-font'>
-                            {{ $brewery->website }}
-                        </div>
-                    </div>                    
                     <div class='row'>
                         <div class='col-md-4 col-md-offset-4 brewery-location brewery-info abel-font'>
                             {{ $brewery->streetAddress}}
