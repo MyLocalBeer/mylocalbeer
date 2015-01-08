@@ -68,7 +68,7 @@ class RolesTableSeeder extends Seeder {
         $providerRole = DB::table('roles')->where('name', '=', 'Provider')->pluck('id');
         $seekerRole = DB::table('roles')->where('name', '=', 'Seeker')->pluck('id');
 
-        $user =User::where('username','=','jbird6803')->first();
+        $user =User::where('username','=','jstaudt')->first();
         $user->attachRole( $admin );
 
         $user =User::where('username','=','provider1')->first();
