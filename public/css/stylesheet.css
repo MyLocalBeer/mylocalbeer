@@ -78,6 +78,20 @@ h3 {
 	margin: 10px;
 }
 
+#about{
+	margin-right: 30px;
+	margin-left: 30px;
+}
+
+.center-image{
+	float: none;
+	margin: 0 auto;
+}
+
+#theteam{
+
+}
+
 /*END CSS FOR HELLO.BLADE*/
 
 /*START CSS FOR BREWERIES.BLADE*/
@@ -201,6 +215,13 @@ h3 {
 	font-family: 'Droid Serif', serif;
 	font-size: 2em;
 	color: white;
+}
+
+.lobster{
+	font-family: 'Lobster', cursive;
+	text-align: center;
+	font-size: 4em;
+
 }
 /*END CSS FOR WELCOME PAGE*/
 

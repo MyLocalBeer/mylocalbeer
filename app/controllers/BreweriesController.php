@@ -54,7 +54,7 @@ class BreweriesController extends \BaseController {
 	 */
 	public function create()
 	{
-		return View::make('breweries.create');
+		return View::make('partials.create_brewery');
 	}
 
 	/**
