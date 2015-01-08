@@ -7,6 +7,7 @@
  *
  * Implements actions regarding user management
  */
+
 class UsersController extends BaseController
 {
 

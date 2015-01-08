@@ -83,6 +83,36 @@
 		</div>
 	</div>
 </div>
+
+<div id='about'>
+	<p class='lobster-text'>Meet the Team</p>
+
+	<div class='row'>
+		<div class='col-md-4 text-center'>
+			<img class='img-circle center-image' src="/pics/johnny.png">
+		</div>
+		<div class='col-md-4 text-center'>
+			<img class='img-circle center-image' src="/pics/headshot3.png">
+		</div>
+		<div class='col-md-4 text-center'>
+			<img class='img-circle center-image' src="/pics/jason.png">
+		</div>
+	</div>
+
+	<div class='row'>
+		<div class='col-md-4 text-center droid-serif'>
+			Johnny Staudt
+		</div>
+		<div class='col-md-4 text-center droid-serif'>
+			Liz Cole
+		</div>
+		<div class='col-md-4 text-center droid-serif'>
+			Jason Birdwell
+		</div>
+	</div>
+</div>
+
+
 @stop
 
 @section('bottomscript')

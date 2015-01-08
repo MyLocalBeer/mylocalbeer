@@ -13,6 +13,15 @@
 
 .newuser-button {
   margin-top: 10px;
+  outline: none;
+}
+
+.no-outline{
+  outline: none;
+}
+
+.margin{
+  margin-bottom: 20px;
 }
 
 </style>
@@ -44,9 +53,9 @@
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-plus"></span>CREATE</a>
             <ul class="dropdown-menu" role="menu">
-              <li><a href="{{{ action('BeersController@create') }}}"><span class="glyphicon glyphicon-plus"></span>Beer</a></li>
+              <li><a href="#" data-toggle='modal' data-target='#create-beer'><span class="glyphicon glyphicon-plus"></span>Beer</a></li>
               <li class="divider"></li>
-              <li><a href="{{{ action('BreweriesController@create') }}}"><span class="glyphicon glyphicon-plus"></span>Brewery</a></li>
+              <li><a href="#" data-toggle='modal' data-target='#create-brewery'><span class="glyphicon glyphicon-plus"></span>Brewery</a></li>
             </ul>
           </li>
         @endif
@@ -56,8 +65,8 @@
         <ul class="nav navbar-nav navbar-right">
           @if (Auth::guest())
           <!-- Button trigger modal -->
-            <li><a href='#' data-toggle="modal" data-target="#signUp"><span class="glyphicon glyphicon-plus"></span> New User</a></li>
-            <li><a href="#" data-toggle='modal' data-target='#login'><span class="glyphicon glyphicon-user"></span> Log In</a></li>
+            <li><a href='#' data-toggle="modal" data-target="#signUp"><span class="glyphicon glyphicon-plus no-outline"></span> New User</a></li>
+            <li><a href="#" data-toggle='modal' data-target='#login'><span class="glyphicon glyphicon-user no-outline"></span> Log In</a></li>
           @else
             <li><a href="/users/logout"><span class="glyphicon glyphicon-user"></span> Log Out</a></li>
           @endif
@@ -79,12 +88,12 @@
         <div class="modal-body">
           <div class='row' id='modal-content'>
             <div class="col-md-4"> 
-              <img src="/pics/singup.png">    
+              <img class='margin' src="/pics/singup.png">    
             </div>  
         
-        @include('partials.create_form') 
+             @include('partials.create_form') 
              
-        </div>
+          </div>
         </div>
     </div>
   </div>
@@ -100,11 +109,43 @@
       <div class="modal-body">
         <div class='row' id='modal-content'>
           <div class="col-md-4"> 
-            <img src="/pics/login.png">
+            <img class='margin' src="/pics/login.png">
           </div>  
       
         @include('partials.login_form') 
            
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="create-beer" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content modal-background">
+      <div class='modal-header'>
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+      </div>
+      <div class="modal-body">
+        <div id='modal-content'>
+          @include('partials.create_beer')
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="create-brewery" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content modal-background">
+      <div class='modal-header'>
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+      </div>
+      <div class="modal-body">
+        <div id='modal-content'>
+          @include('partials.create_brewery')
         </div>
       </div>
     </div>
