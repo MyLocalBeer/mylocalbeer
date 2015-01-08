@@ -71,7 +71,25 @@ class RolesTableSeeder extends Seeder {
         $user =User::where('username','=','jbird6803')->first();
         $user->attachRole( $admin );
 
-        $user =User::where('username','=','provider')->first();
+        $user =User::where('username','=','provider1')->first();
+        $user->attachRole( $provider );
+
+        $user =User::where('username','=','provider2')->first();
+        $user->attachRole( $provider );
+
+        $user =User::where('username','=','provider3')->first();
+        $user->attachRole( $provider );
+
+        $user =User::where('username','=','provider4')->first();
+        $user->attachRole( $provider );
+
+        $user =User::where('username','=','provider5')->first();
+        $user->attachRole( $provider );
+
+        $user =User::where('username','=','provider6')->first();
+        $user->attachRole( $provider );
+
+        $user =User::where('username','=','provider7')->first();
         $user->attachRole( $provider );
 
         $user =User::where('username','=','seeker')->first();
