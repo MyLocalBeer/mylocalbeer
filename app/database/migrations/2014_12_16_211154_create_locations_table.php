@@ -17,6 +17,8 @@ class CreateLocationsTable extends Migration {
 			$table->increments('id');
 			$table->string('address');
 			$table->string('establishment');
+			$table->string('lat');
+			$table->string('long');
 			$table->timestamps();
 		});
 	}

@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'HomeController@showWelcome');
+Route::get('/', 'HomeController@index');
 
 Route::get('breweries/search', 'BreweriesController@search');
 Route::get('breweries/results', 'BreweriesController@request');
