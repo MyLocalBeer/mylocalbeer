@@ -25,6 +25,7 @@ class BeersController extends \BaseController {
 	 */
 	public function index()
 	{
+		$brewery_id = Auth::user()->brewery_id;
 		$query = Beer::with('breweries');
 		$search = Input::get('search');
 		
@@ -33,8 +34,12 @@ class BeersController extends \BaseController {
 			$query->where('beer_name', 'like', "%{$search}%")
 				  ->orWhere('beer_style', 'like', "%{$search}%");
 		}
+		if(Auth::user()->brewery_id)
+		{
+			$query->where('brewery_id', 'like', "$brewery_id");
+		}
 		$beers = $query->orderBy('beer_name', 'ASC')->paginate(10);
-		return View::make('beers.index')->with('beers', $beers)->with('search', $search);
+		return View::make('beers.index')->with('beers', $beers)->with('search', $search)->with('brewery_id', $brewery_id);
 		
 		// $beers = Beer::all();
 
@@ -49,6 +54,7 @@ class BeersController extends \BaseController {
 	public function create()
 	{
 		$locations = Location::all();
+		
 		return View::make('partials.create_beer')->with('locations', $locations);
 	}
 
@@ -125,10 +131,10 @@ class BeersController extends \BaseController {
 		$beer->abv  = Input::get('abv');
 		$beer->description  = Input::get('description');
 		// $beer->location = Input::get('location');
+		$beer->brewery_id = Auth::user()->brewery_id;
 		$beer->save();
 		$locations = Input::get('beer-locations');
 		$beer->locations()->sync($locations);
-		Auth::user()->brewery_id;
 		Session::flash('successMessage', "Beer saved successfully");
 		return Redirect::action('BeersController@index');
 	}
