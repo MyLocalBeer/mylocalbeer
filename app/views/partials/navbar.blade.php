@@ -49,17 +49,18 @@
           <li><a href="/breweries/">The Breweries <span class="sr-only"></span></a></li>
 
   <!-- ADD IF STATEMENT TO REMOVE CREATE OPTION FOR GUESTS -->
-        @if (Entrust::hasRole('Provider'))
+        @if (Entrust::can('can_create_beer'))
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-plus"></span>CREATE</a>
             <ul class="dropdown-menu" role="menu">
               <li><a href="#" data-toggle='modal' data-target='#create-beer'><span class="glyphicon glyphicon-plus"></span>Beer</a></li>
+          @if (Entrust::hasRole('Admin'))   
               <li class="divider"></li>
               <li><a href="#" data-toggle='modal' data-target='#create-brewery'><span class="glyphicon glyphicon-plus"></span>Brewery</a></li>
             </ul>
+          @endif
           </li>
         @endif
-
         </ul>
         
         <ul class="nav navbar-nav navbar-right">

@@ -37,14 +37,26 @@
                         {{ $beer->posted }}
                     </div>
                 </div> 
-                <div class='row'>
-                    @if(Auth::check())
+<!--                 <div class='row'>
+                    @if(Entrust::can('can_edit_beer'))
                     <div class='col-md-2 col-md-offset-10'>
                         {{ HTML::link('/beers' . "/" . $beer->id . '/edit', 'Edit', array('class' => 'btn btn-success btn-xs')) }}
                     </div>
+                    @endif
+                    @if(Entrust::can('can_delete_beer'))
                     <button class="btn btn-danger delete-button" data-post-id="{{{$beer->id}}}">Delete</button>
                     @endif
-                </div>
+                </div> -->
+                <div class='row'>
+                        @if(Entrust::can('can_edit_beer'))
+                        <div class='col-md-2 col-md-offset-10'>
+                            <a href="{{ action('BeersController@edit', $beer->id) }}"><span class='glyphicon glyphicon-pencil' aria-hidden='true'></span></a>
+                        @endif
+                        @if(Entrust::can('can_delete_beer'))
+                            <button class='delete_button' data-post-id="{{{$beer->id}}}"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+                        </div>
+                        @endif
+              </div>
             </article>
         </div>
         <div class='row'>
