@@ -8,7 +8,8 @@ class Beer extends \Eloquent {
         'beer_style'=> 'required|max:55',
         'abv'=> 'required|max:10',
         'description'=>'required',
-        'posted'=> 'required|max:11'
+        'posted'=> 'required|max:11',
+        'brewery_id'=> 'required'
 	];
 
 	// Don't forget to fill this array

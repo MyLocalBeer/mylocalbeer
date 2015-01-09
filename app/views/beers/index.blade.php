@@ -32,21 +32,11 @@
                         {{ $beer->description }}
                     </div>
                 </div> 
-                <div class='row'>  
+<!--                 <div class='row'>  
                     <div class='col-md-6 col-md-offset-3 brewery-info abel-font'>
                         {{ $beer->posted }}
                     </div>
-                </div> 
-<!--                 <div class='row'>
-                    @if(Entrust::can('can_edit_beer'))
-                    <div class='col-md-2 col-md-offset-10'>
-                        {{ HTML::link('/beers' . "/" . $beer->id . '/edit', 'Edit', array('class' => 'btn btn-success btn-xs')) }}
-                    </div>
-                    @endif
-                    @if(Entrust::can('can_delete_beer'))
-                    <button class="btn btn-danger delete-button" data-post-id="{{{$beer->id}}}">Delete</button>
-                    @endif
-                </div> -->
+                </div>  -->
                 <div class='row'>
                         @if(Entrust::can('can_edit_beer'))
                         <div class='col-md-2 col-md-offset-10'>
