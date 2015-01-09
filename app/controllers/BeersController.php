@@ -139,6 +139,12 @@ class BeersController extends \BaseController {
 		return Redirect::action('BeersController@index');
 	}
 
+	// public function saveRating(){
+
+				
+
+	// }
+
 }
 
  //29.425021, -98.491779 --- long and lat for the esquire
