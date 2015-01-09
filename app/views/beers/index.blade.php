@@ -37,16 +37,6 @@
                         {{ $beer->posted }}
                     </div>
                 </div> 
-<!--                 <div class='row'>
-                    @if(Entrust::can('can_edit_beer'))
-                    <div class='col-md-2 col-md-offset-10'>
-                        {{ HTML::link('/beers' . "/" . $beer->id . '/edit', 'Edit', array('class' => 'btn btn-success btn-xs')) }}
-                    </div>
-                    @endif
-                    @if(Entrust::can('can_delete_beer'))
-                    <button class="btn btn-danger delete-button" data-post-id="{{{$beer->id}}}">Delete</button>
-                    @endif
-                </div> -->
                 <div class='row'>
                         @if(Entrust::can('can_edit_beer'))
                         <div class='col-md-2 col-md-offset-10'>
@@ -59,13 +49,13 @@
               </div>
             </article>
         </div>
-        <span class="star-rating">
-            <input type="radio" name="rating" value="1"><i></i>
-            <input type="radio" name="rating" value="2"><i></i>
-            <input type="radio" name="rating" value="3"><i></i>
-            <input type="radio" name="rating" value="4"><i></i>
-            <input type="radio" name="rating" value="5"><i></i>
-        </span>
+
+        <div class='row'>   
+            <div class='col-md-6 col-md-offset-3 text-center'>
+               <input id="input-id" type="number" class="rating" min=0 max=5 step=0.5 data-size="sm" > 
+            </div>
+        </div> 
+
         <div class='row'>
             <div class='col-md-6 col-md-offset-3'>
                 <div class='line'></div>
@@ -98,10 +88,8 @@
 
         });
 
-        $(':radio').change(
-  function(){
-    $('.choice').text( this.value + ' stars' );
-  } 
-)
+    // with plugin options
+    $("#input-id").rating({'size':'lg'});
+
     </script>
 @stop
