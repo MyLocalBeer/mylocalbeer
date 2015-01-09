@@ -16,7 +16,8 @@ class ConfideSetupUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->string('role')->default("seeker");
-            $table->string('brewery_id')->nullable();
+            $table->integer('brewery_id')->unsigned()->nullable();
+            $table->foreign('brewery_id')->references('id')->on('breweries');
             $table->string('confirmation_code');
             $table->string('remember_token')->nullable();
             $table->boolean('confirmed')->default(false);
