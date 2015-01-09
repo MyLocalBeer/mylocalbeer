@@ -20,6 +20,7 @@ class CreateBeersTable extends Migration {
 			$table->string('abv', 10);
 			$table->text('description', 255);
 			$table->integer('brewery_id')->unsigned();
+			$table->foreign('brewery_id')->references('id')->on('breweries');
 			$table->integer('posted');
 			$table->timestamps();
 		});
