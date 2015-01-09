@@ -67,19 +67,21 @@
 			</div>
 			<div class="map col-md-8 col-md-offset-2" id="map-canvas">
 			</div>
-			@foreach($locations as $location)
-		        <div id='breweries'>
-		            <article>
-		                <div class='name-local'>
-		                    <div class='row'>
-		                        <div class='beerinfo beertitle col-md-6 col-md-offset-3'>
-		                            {{ $location->establishment }}
-		                        </div>
-		                    </div>
-		                </div>
-		            </article>
-		        </div>
-		    @endforeach
+			@if(!empty($var))
+				@foreach($locations as $location)
+			        <div id='breweries'>
+			            <article>
+			                <div class='name-local'>
+			                    <div class='row'>
+			                        <div class='beerinfo beertitle col-md-6 col-md-offset-3'>
+			                            {{ $location->establishment }}
+			                        </div>
+			                    </div>
+			                </div>
+			            </article>
+			        </div>
+			    @endforeach
+			@endif
 		</div>
 	</div>
 </div>
@@ -137,13 +139,27 @@
             locations.forEach(function(loc) {
                 var marker = new google.maps.Marker({
                     position: new google.maps.LatLng(loc.lat, loc.long),
-                    map: map
-                  });
+                    map: map,
+                });
+
+                var contentString = '<div id="content">'+
+				    '<div id="siteNotice">'+
+				    '</div>'+
+				    '<h1 id="firstHeading" class="firstHeading">'+loc.establishment+'</h1>'+
 
                 bounds.extend(marker.position);
 
                 map.fitBounds(bounds);
+
+	            var infowindow = new google.maps.InfoWindow({
+	     			content: contentString
+	  			});
+	  			
+	            google.maps.event.addListener(marker, 'click', function() {
+	    			infowindow.open(map,marker);
+	  			});
             });
+
         }
         google.maps.event.addDomListener(window, 'load', initialize);
 	</script>

@@ -117,17 +117,18 @@ class BeersController extends \BaseController {
 
 	public function saveBeer(Beer $beer)
 	{
-		$location= Location::where('establishment', Input::get('beer-locations'))->first();
-		$location= Location::findOrFail($location->id);
-
+		// $location= Location::where('establishment', Input::get('beer-locations'))->first();
+		// $location= Location::findOrFail($location->id);
+		// dd(Input::get('beer-locations'));
 		$beer->beer_name = Input::get('beer_name');
 		$beer->beer_style  = Input::get('beer_style');
 		$beer->abv  = Input::get('abv');
 		$beer->description  = Input::get('description');
 		// $beer->location = Input::get('location');
-		$beer->brewery_id  = Input::get('brewery_id');
 		$beer->save();
-		$beer->locations()->attach($location->id);
+		$locations = Input::get('beer-locations');
+		$beer->locations()->sync($locations);
+		Auth::user()->brewery_id;
 		Session::flash('successMessage', "Beer saved successfully");
 		return Redirect::action('BeersController@index');
 	}

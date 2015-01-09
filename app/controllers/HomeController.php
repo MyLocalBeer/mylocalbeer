@@ -22,7 +22,6 @@ class HomeController extends BaseController {
 
     public function index()
     {
-
         $var = Input::get('search');
         $queries = Location::with('beers');
 

@@ -39,10 +39,10 @@
 	</div>
 	<div class="form-group row">
 		<div class='col-md-6 col-md-offset-2'>
-			<select name="beer-locations" id="beer-locations" class="selectpicker" multiple>
+			<select name="beer-locations[]" id="beer-locations" class="selectpicker" multiple>
 					<option value="" selected disabled>Location</option>
-				@foreach ($locations as $location)
-					<option  value="{{ $location->establishment }}">{{ $location->establishment }}</option>
+				@foreach ($all_locations as $location)
+					<option  value="{{ $location->id }}">{{ $location->establishment }}</option>
 				@endforeach
 			</select>
 		</div>

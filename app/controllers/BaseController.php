@@ -7,7 +7,7 @@ class BaseController extends Controller {
 	    // require csrf token for all post, delete, and put actions
 	    $this->beforeFilter('csrf', array('on' => array('post', 'delete', 'put')));
 
-	    View::share('locations', Location::all());
+	    View::share('all_locations', Location::all());
 	}
 	/**
 	 * Setup the layout used by the controller.
