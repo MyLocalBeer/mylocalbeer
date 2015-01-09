@@ -32,11 +32,12 @@
                         {{ $beer->description }}
                     </div>
                 </div> 
-                <div class='row'>  
+<!--                 <div class='row'>  
                     <div class='col-md-6 col-md-offset-3 brewery-info abel-font'>
                         {{ $beer->posted }}
                     </div>
                 </div> 
+                </div>  -->
                 <div class='row'>
                         @if(Entrust::can('can_edit_beer'))
                         <div class='col-md-2 col-md-offset-10'>
@@ -52,7 +53,7 @@
 
         <div class='row'>   
             <div class='col-md-6 col-md-offset-3 text-center'>
-               <input id="input-id" type="number" class="rating" min=0 max=5 step=0.5 data-size="sm" > 
+               <input id="input-id" type="number" class="rating" min=0 max=5 step=1 data-size="sm" > 
             </div>
         </div> 
 

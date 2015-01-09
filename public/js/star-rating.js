@@ -11,7 +11,7 @@
 (function ($) {
     var DEFAULT_MIN = 0;
     var DEFAULT_MAX = 5;
-    var DEFAULT_STEP = 0.5;
+    var DEFAULT_STEP = 1;
 
     var isTouchCapable = 'ontouchstart' in window || (window.DocumentTouch && document instanceof window.DocumentTouch);
     
