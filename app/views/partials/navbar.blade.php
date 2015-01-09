@@ -48,7 +48,6 @@
           <li><a href="/beers/">The Beer <span class="sr-only"></span></a></li>
           <li><a href="/breweries/">The Breweries <span class="sr-only"></span></a></li>
 
-  <!-- ADD IF STATEMENT TO REMOVE CREATE OPTION FOR GUESTS -->
         @if (Entrust::can('can_create_beer'))
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-plus"></span>CREATE</a>
