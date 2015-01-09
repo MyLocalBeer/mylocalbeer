@@ -36,6 +36,7 @@
                     <div class='col-md-6 col-md-offset-3 brewery-info abel-font'>
                         {{ $beer->posted }}
                     </div>
+                </div> 
                 </div>  -->
                 <div class='row'>
                         @if(Entrust::can('can_edit_beer'))
@@ -49,11 +50,20 @@
               </div>
             </article>
         </div>
+
+        <div class='row'>   
+            <div class='col-md-6 col-md-offset-3 text-center'>
+               <input id="input-id" type="number" class="rating" min=0 max=5 step=1 data-size="sm" > 
+            </div>
+        </div> 
+
         <div class='row'>
             <div class='col-md-6 col-md-offset-3'>
                 <div class='line'></div>
             </div>
         </div>
+
+
     @endforeach
 
 
@@ -78,5 +88,9 @@
             }
 
         });
+
+    // with plugin options
+    $("#input-id").rating({'size':'lg'});
+
     </script>
 @stop

@@ -119,8 +119,8 @@ h3 {
 }
 
 .name-local{
-	margin-bottom: 15px;
-}
+/*	margin-bottom: 15px;
+*/}
 .brewery-name {
 	font-family: 'Droid Serif', serif;
 	font-size: 2em;	
@@ -225,4 +225,6 @@ h3 {
 
 }
 /*END CSS FOR WELCOME PAGE*/
+
+
 
