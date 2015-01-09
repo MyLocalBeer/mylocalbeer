@@ -10,7 +10,7 @@ class Location extends \Eloquent {
 	// Don't forget to fill this array
 	protected $fillable = [];
     
-    public function beers (){
+    public function beers(){
         return $this->belongsToMany('Beer');
     }
 
