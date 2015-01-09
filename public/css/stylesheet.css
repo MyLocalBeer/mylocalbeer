@@ -118,9 +118,7 @@ h3 {
 	font-size: 15px;
 }
 
-.name-local{
-/*	margin-bottom: 15px;
-*/}
+
 .brewery-name {
 	font-family: 'Droid Serif', serif;
 	font-size: 2em;	
@@ -184,11 +182,24 @@ h3 {
 }
 
 .beertitle{
-	font-size: 2em;
+	font-family: 'Lobster', cursive;
+	font-size: 3em;
+	color: black;
 }
 
 .beerinfo{
 	font-family: 'Droid Serif', serif;
+	font-size: 2em;
+}
+
+#rating{
+	margin-bottom: 10px;
+}
+
+.beerdescription{
+	font-family: 'Abel', sans-serif;
+	color: black;
+	font-size: 2em;
 
 }
 
