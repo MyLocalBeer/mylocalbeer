@@ -45,7 +45,6 @@
                 </div>
 
                 <div class='row'>
-                    @if(Auth::check())
                     <div class='row'>
                         @if(Entrust::can('can_edit_brewery'))
                         <div class='col-md-2 col-md-offset-10'>
