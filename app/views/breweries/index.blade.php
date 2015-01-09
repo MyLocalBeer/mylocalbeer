@@ -48,10 +48,11 @@
                         </div>
                     </div>
                     <div class='row'>
-                        @if(Auth::check())
+                        @if(Entrust::can('can_edit_brewery'))
                         <div class='col-md-2 col-md-offset-10'>
                             <a href="{{ action('BreweriesController@edit', $brewery->id) }}"><span class='glyphicon glyphicon-pencil' aria-hidden='true'></span></a>
-
+                        @endif
+                        @if(Entrust::can('can_delete_brewery'))
                             <button class='delete_button' data-post-id="{{{$brewery->id}}}"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
                         </div>
                         @endif
