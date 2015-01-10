@@ -25,7 +25,6 @@
                             {{ $beer->beer_name }}
                         </div>
                     </div>
-                
                 <div class='row'>
                     <div class='col-md-6 col-md-offset-3 beerinfo text-center'>
                         {{ $beer->beer_style }}
@@ -41,12 +40,6 @@
                         {{ $beer->description }}
                     </div>
                 </div> 
-<!--                 <div class='row'>  
-                    <div class='col-md-6 col-md-offset-3 brewery-info abel-font'>
-                        {{ $beer->posted }}
-                    </div>
-                </div> 
-                </div>  -->
                 <div class='row'>
 
               </div>

@@ -80,7 +80,12 @@ class BreweriesController extends \BaseController {
 	{
 		$brewery = Brewery::findOrFail($id);
 
-		return View::make('breweries.index', compact('brewery'));
+		$query = Beer::with('breweries');
+
+		$query->where ('brewery_id', 'like', "$id");
+		$beers = $query->orderBy('beer_name', 'ASC')->paginate(100);
+
+		return View::make('breweries.show')->with('brewery', $brewery)->with('beers', $beers)->with('id', $id);
 	}
 
 	/**

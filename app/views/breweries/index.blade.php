@@ -11,7 +11,7 @@
                 <div class=''>
                     <div class='row'>
                         <div class="brewery-name col-md-4 col-md-offset-4">
-                            {{ $brewery->name }}
+                            <div><a href="/breweries/<?echo $brewery->id?>"><? echo $brewery->name?></a></div>
                         </div>
                     </div>
                 </div>
