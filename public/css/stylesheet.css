@@ -89,8 +89,17 @@ h3 {
 	margin: 0 auto;
 }
 
-#theteam{
+.searchbeer{
+	padding-top: 10px;
+}
 
+.searching{
+	margin-top: 10px;
+}
+
+.searchresults{
+	font-family: 'Abel', sans-serif;
+	font-size: 20px;
 }
 
 /*END CSS FOR HELLO.BLADE*/
@@ -118,7 +127,6 @@ h3 {
 	font-size: 15px;
 }
 
-
 .brewery-name {
 	font-family: 'Droid Serif', serif;
 	font-size: 2em;	
@@ -126,8 +134,43 @@ h3 {
 	text-align: center;
 }
 
+.brewery{
+	font-family: 'Lobster', cursive;
+	text-align: center;
+	font-size: 3em;
+	color: black;
+}
+
+.droid{
+	font-family: 'Droid Serif', serif;
+}
+
+
+#link:link{
+	color: #f8f1dd;
+}
+
+#link:hover{
+	text-decoration: none; 
+	color: black;
+}
+
+#link:visited{
+	text-decoration: none;
+	color: #f8f1dd;
+}
+
+#link:active{
+	color: black;
+	text-decoration: none;
+}
+
 .brewery-info{
 	color: black;
+}
+
+.brewery-pic{
+	border: 2px solid black;
 }
 
 .brewery-location{
@@ -139,9 +182,9 @@ h3 {
 }
 
 .brewery-story{
-	font-family: 'Droid Serif', serif;
+	font-family: 'Abel', sans-serif;
 	text-align: center;
-
+	font-size: 20px;
 }
 
 .delete_button:hover, .delete_button:focus, .delete_button{
