@@ -8,20 +8,23 @@
     @foreach($breweries as $brewery)
         <div id='breweries'>
             <article>
-                <div class=''>
-                    <div class='row'>
-                        <div class="brewery-name col-md-4 col-md-offset-4">
-                            {{ $brewery->name }}
-                        </div>
+                <div class='row'>    
+                    <div class='col-md-4 col-md-offset-4 text-center '>
+                        <img class='brewery-pic' src="{{ $brewery->image }}">
+                    </div>
+                </div>          
+                <div class='row'>
+                    <div class="brewery col-md-6 col-md-offset-3 text-center">
+                        {{ $brewery->name }}
                     </div>
                 </div>
                 <div class='row'>    
-                    <div class='col-md-4 col-md-offset-4 brewery-info brewery-location abel-font'>
-                        <a href="{{ $brewery->website }}">visit {{ $brewery->name }}</a>
+                    <div class='col-md-4 col-md-offset-4 text-center brewery-info brewery-location abel-font '>
+                        <a id='link' class='droid' href="{{ $brewery->website }}">Visit {{ $brewery->name }}'s website</a>
                     </div>
                 </div>
                 <div class='row'>
-                    <div class='col-md-4 col-md-offset-4 brewery-location brewery-info abel-font'>
+                    <div class='col-md-4 col-md-offset-4 text-center brewery-location brewery-info droid'>
                         {{ $brewery->streetAddress}}
 
                         {{ $brewery->locality }}
@@ -33,13 +36,9 @@
                         <p>Established {{ $brewery->yearOpened }}</p>
                     </div>
                 </div>
+                    
                 <div class='row'>    
-                    <div class='col-md-4 col-md-offset-4 brewery-info abel-font'>
-                        <img src="{{ $brewery->image }}">
-                    </div>
-                </div>                    
-                <div class='row'>    
-                    <div class='col-md-10 col-md-offset-1 brewery-info brewery-story'>
+                    <div class='col-md-10 col-md-offset-1 text-center brewery-info brewery-story'>
                         {{ $brewery->story }}
                     </div>
                 </div>

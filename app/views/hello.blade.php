@@ -50,38 +50,41 @@
 <div id='search'>
 	<div class='container'>
 		<a name='find'></a>
+
 			<div class='row'>
 				<img class='center-block' id='thesearch' src="/pics/thesearch.png">
 			</div>
-		<div class='row'>
-			<div class="col-md-3 form-group" role="navigation">
+		
+		
+			<div role="navigation">
 			      {{ Form::open(['action' => ['HomeController@index'], 'method' => 'GET', 'name' => 'search',]) }}
-
-			      <div class='form-group'>
-			      	<input type='search' class='form-control' name="search" id='search' placeholder='Search by Beer Name or Style'>
-			      </div>
-
-			      {{ Form::submit('Search', array('class' => 'btn btn-primary btn-sm')) }}
-
-			      {{ Form::close() }}
+			<div class='row searching'>
+			    <div class='form-group col-md-3 col-md-offset-4'>
+			     	<input type='search' class='form-control' name="search" id='search' placeholder='Search by Beer Name or Style'>
+			    </div>
+			    	<div class='col-md-2 searchbeer'>
+						<button type="submit" class="btn btn-info">Submit</button>
+					</div>
 			</div>
-			<div class="map col-md-8 col-md-offset-2" id="map-canvas">
+			    	{{ Form::close() }}
+			
+		</div>
+		<div class='row'>
+			<div class="col-md-6 map" id="map-canvas"></div>
+				@if(!empty($var))
+					@foreach($locations as $location)
+				        <div id='breweries'>
+				            <article>
+				                <div class='name-local'>					         
+				                    <div class='col-md-4 searchresults'>
+				                        {{ $location->establishment }}
+				                    </div>
+				                </div>
+				            </article>
+				        </div>
+				    @endforeach
+				@endif
 			</div>
-			@if(!empty($var))
-				@foreach($locations as $location)
-			        <div id='breweries'>
-			            <article>
-			                <div class='name-local'>
-			                    <div class='row'>
-			                        <div class='beerinfo beertitle col-md-6 col-md-offset-3'>
-			                            {{ $location->establishment }}
-			                        </div>
-			                    </div>
-			                </div>
-			            </article>
-			        </div>
-			    @endforeach
-			@endif
 		</div>
 	</div>
 </div>
@@ -94,7 +97,7 @@
 			<img class='img-circle center-image' src="/pics/johnny.png">
 		</div>
 		<div class='col-md-4 text-center'>
-			<img class='img-circle center-image' src="/pics/headshot3.png">
+			<img class='img-circle center-image' src="/pics/liz.png">
 		</div>
 		<div class='col-md-4 text-center'>
 			<img class='img-circle center-image' src="/pics/jason.png">

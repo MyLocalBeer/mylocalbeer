@@ -56,8 +56,8 @@
           @if (Entrust::hasRole('Admin'))   
               <li class="divider"></li>
               <li><a href="#" data-toggle='modal' data-target='#create-brewery'><span class="glyphicon glyphicon-plus"></span>Brewery</a></li>
-            </ul>
           @endif
+            </ul>
           </li>
         @endif
         </ul>
