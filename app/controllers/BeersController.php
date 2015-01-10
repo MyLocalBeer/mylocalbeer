@@ -40,11 +40,11 @@ class BeersController extends \BaseController {
 			$query->where('beer_name', 'like', "%{$search}%")
 				  ->orWhere('beer_style', 'like', "%{$search}%");
 		}
-		if(Auth::check())
+		if($brewery_id == null)
 		{
-			$query->where('brewery_id', 'like', "$brewery_id");
-		} else {
 			$query = Beer::with('breweries');
+		} else {
+			$query->where('brewery_id', 'like', "$brewery_id");
 		}
 		$beers = $query->orderBy('beer_name', 'ASC')->paginate(100);
 		return View::make('beers.index')->with('brewery_id', $brewery_id)->with('beers', $beers)->with('search', $search);
