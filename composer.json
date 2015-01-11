@@ -12,8 +12,7 @@
 		"guzzlehttp/guzzle": "~4.0",
 		"zizaco/confide": "~4.0",
 		"zizaco/entrust": "1.2.*",
-		"beerguide/brewerydb": "dev-master",
-		"kartik-v/bootstrap-star-rating": "dev-master"
+		"beerguide/brewerydb": "dev-master"
 	},
 	
 	"autoload": {

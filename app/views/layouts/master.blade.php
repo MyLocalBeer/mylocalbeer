@@ -8,7 +8,7 @@
 	<!-- Google Fonts -->
 	<link href='http://fonts.googleapis.com/css?family=Lobster|Droid+Serif:400,700,400italic,700italic|Pacifico' rel='stylesheet' type='text/css'><link href='http://fonts.googleapis.com/css?family=Abel|Josefin+Sans' rel='stylesheet' type='text/css'>
 	<!-- local CSS -->
-	<link href="/css/star-rating.css" media="all" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/css/bootstrap-select.min.css">
     <link rel="stylesheet" href="/css/stylesheet.css">
 
 
@@ -36,8 +36,7 @@
     <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 	
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-	<script src="/js/star-rating.js" type="text/javascript"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/js/bootstrap-select.min.js"></script>
+    <script src="/js/bootstrap-select.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 
 @yield('bottomscript')
