@@ -80,7 +80,7 @@ class BreweriesController extends \BaseController {
 	{
 		$brewery = Brewery::findOrFail($id);
 
-		$query = Beer::with('breweries');
+		$query = Beer::with('brewery');
 
 		$query->where ('brewery_id', 'like', "$id");
 		$beers = $query->orderBy('beer_name', 'ASC')->paginate(100);

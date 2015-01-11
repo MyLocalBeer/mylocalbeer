@@ -29,27 +29,25 @@ class BeersController extends \BaseController {
 		{
 			$brewery_id = null;
 		}		
-		if(Auth::check())
+		elseif(Auth::check())
 		{
 			$brewery_id = Auth::user()->brewery_id;
 		}
 		
-		$query = Beer::with('breweries');
+		$query = Beer::with('brewery');
 		$search = Input::get('search');
 		
-		if($brewery_id == null)
-		{
-			$query = Beer::with('breweries');
-		} else {
-			$query->where('brewery_id', 'like', "$brewery_id");
-		}
-
 		if(Input::has('search'))
 		{
 			$query->orwhere('beer_name', 'like', "%{$search}%");
 				  // ->orWhere('beer_style', 'like', "%{$search}%");
+		}
+		
+		if($brewery_id != null)
+		{
+			$query->where('brewery_id', 'like', "$brewery_id");
 		} else {
-			$query = null;
+			$query = Beer::with('brewery');
 		}
 
 		$beers = $query->orderBy('beer_name', 'ASC')->paginate(100);
@@ -57,7 +55,7 @@ class BeersController extends \BaseController {
 		// $brewery_query = Brewery::all();
 		// $brewery_query->where ('brewery_id', 'like', "$brewery_id");
 		// $brewery = $brewery_query;
-		return View::make('beers.index')->with('brewery_id', $brewery_id)->with('beers', $beers)->with('search', $search);
+		return View::make('beers.index')->with('beers', $beers)->with('search', $search);
 		
 	}
 

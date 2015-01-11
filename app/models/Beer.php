@@ -15,7 +15,7 @@ class Beer extends \Eloquent {
 	// Don't forget to fill this array
 	protected $table = 'beers';
 
-	public function breweries()
+	public function brewery()
 	{
 		return $this->belongsTo('Brewery');
 	}	
