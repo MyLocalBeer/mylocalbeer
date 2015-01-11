@@ -53,7 +53,7 @@
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-plus"></span>CREATE</a>
             <ul class="dropdown-menu" role="menu">
               <li><a href="#" data-toggle='modal' data-target='#create-beer'><span class="glyphicon glyphicon-plus"></span>Beer</a></li>
-          @if (Entrust::hasRole('Admin'))   
+          @if (Entrust::can('can_create_brewery'))   
               <li class="divider"></li>
               <li><a href="#" data-toggle='modal' data-target='#create-brewery'><span class="glyphicon glyphicon-plus"></span>Brewery</a></li>
           @endif

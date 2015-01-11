@@ -25,6 +25,12 @@
                             {{ $beer->beer_name }}
                         </div>
                     </div>
+                    <div class='row'>
+                        <div class="brewery-name col-md-4 col-md-offset-4">
+                            <div><a href="/breweries/<?echo $beer->brewery_id?>">{{ $beer->brewery->name }} </a></div>
+                        </div>
+                    </div>
+            
                 
                 <div class='row'>
                     <div class='col-md-6 col-md-offset-3 beerinfo text-center'>
@@ -41,12 +47,6 @@
                         {{ $beer->description }}
                     </div>
                 </div> 
-<!--                 <div class='row'>  
-                    <div class='col-md-6 col-md-offset-3 brewery-info abel-font'>
-                        {{ $beer->posted }}
-                    </div>
-                </div> 
-                </div>  -->
                 <div class='row'>
 
               </div>

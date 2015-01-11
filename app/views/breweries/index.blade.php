@@ -8,16 +8,17 @@
     @foreach($breweries as $brewery)
         <div id='breweries'>
             <article>
+                <div class=''>
+                    <div class='row'>
+                        <div class="brewery-name col-md-4 col-md-offset-4">
+                            <div><a href="/breweries/<?echo $brewery->id?>"><? echo $brewery->name?></a></div>
+                        </div>
+                    </div>
                 <div class='row'>    
                     <div class='col-md-4 col-md-offset-4 text-center '>
                         <img class='brewery-pic' src="{{ $brewery->image }}">
                     </div>
                 </div>          
-                <div class='row'>
-                    <div class="brewery col-md-6 col-md-offset-3 text-center">
-                        {{ $brewery->name }}
-                    </div>
-                </div>
                 <div class='row'>    
                     <div class='col-md-4 col-md-offset-4 text-center brewery-info brewery-location abel-font '>
                         <a id='link' class='droid' href="{{ $brewery->website }}">Visit {{ $brewery->name }}'s website</a>
