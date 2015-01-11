@@ -2,8 +2,7 @@
 @section('topscript')
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGji162SkzFzL4YhHP8gRXqWlBLenkk1A"></script>
 @section('content')
-<div>
-	
+<div>	
 	<div id='main' class='row'>
 		<div >
 			<img id='logo' class='center-block'src="pics/mylocallogo.png">
@@ -130,7 +129,6 @@
 	        };
 
   		 	var locations = {{ $locations->toJSON() }};
-
 		 	if (!(locations instanceof Array)) {
 		 		locations = [locations];
 		 	}
@@ -144,11 +142,17 @@
                     position: new google.maps.LatLng(loc.lat, loc.long),
                     map: map,
                 });
+                for (var i = 0; i < loc.beers.length; i++) {
+                	console.log(loc.beers[i]);
+                };
 
                 var contentString = '<div id="content">'+
 				    '<div id="siteNotice">'+
 				    '</div>'+
 				    '<h1 id="firstHeading" class="firstHeading">'+loc.establishment+'</h1>'+
+				    '<p id="beerInventory" class="beerInventory">'+loc.beers[0].beer_name+ ' ' + loc.beers[0].beer_style + loc.beers.breweries[0].name + '</p>'+
+				    '</div>';
+
 
                 bounds.extend(marker.position);
 
@@ -157,7 +161,6 @@
 	            var infowindow = new google.maps.InfoWindow({
 	     			content: contentString
 	  			});
-	  			
 	            google.maps.event.addListener(marker, 'click', function() {
 	    			infowindow.open(map,marker);
 	  			});

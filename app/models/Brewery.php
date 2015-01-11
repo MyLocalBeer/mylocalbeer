@@ -21,4 +21,5 @@ class Brewery extends \Eloquent {
 		return $this->belongsTo('User');
 	}
 
+
 }

@@ -23,13 +23,16 @@ class HomeController extends BaseController {
     public function index()
     {
         $var = Input::get('search');
-        $queries = Location::with('beers');
-
+        $queries = Location::with(['beers', 'beers.breweries']);
+        $locations = Location::whereHas('beers', function($q){
+            $q->with('breweries');
+        })->first();
         if (Input::has('search')){
             $queries->whereHas('beers', function($q) use ($var) {
-                $q->where('beer_name', 'like', "%$var%")
-                  ->orWhere('abv', 'like', "%$var%")
-                  ->orWhere('beer_style', 'like', "%$var%");
+                $q->where('beer_name', 'like', "%$var%");
+            });
+            $queries->orWhereHas('beers', function($q) use ($var) {
+                $q->where('beer_style', 'like', "%$var%");
             });
         }
 
@@ -44,3 +47,4 @@ class HomeController extends BaseController {
     }
 
 }
+
