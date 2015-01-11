@@ -136,21 +136,24 @@
         	var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
             var bounds = new google.maps.LatLngBounds();
-
+            
             locations.forEach(function(loc) {
                 var marker = new google.maps.Marker({
                     position: new google.maps.LatLng(loc.lat, loc.long),
                     map: map,
                 });
                 for (var i = 0; i < loc.beers.length; i++) {
-                	console.log(loc.beers[i]);
+                	var beer_name = loc.beers[i].beer_name;
+                	var beer_style = loc.beers[i].beer_style;
+                	var brewery = loc.beers[i].brewery.name;
+                	console.log(loc.beers[i].brewery.name);
                 };
 
                 var contentString = '<div id="content">'+
 				    '<div id="siteNotice">'+
 				    '</div>'+
-				    '<h1 id="firstHeading" class="firstHeading">'+loc.establishment+'</h1>'+
-				    '<p id="beerInventory" class="beerInventory">'+loc.beers[0].beer_name+ ' ' + loc.beers[0].beer_style + loc.beers.breweries[0].name + '</p>'+
+				    '<h3 id="firstHeading" class="firstHeading">'+loc.establishment+'</h3>'+
+				    '<p id="beerInventory" class="beerInventory">'+beer_name+ ' ' +beer_style + brewery+ '</p>'+
 				    '</div>';
 
 
