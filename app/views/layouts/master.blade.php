@@ -10,6 +10,9 @@
 	<!-- local CSS -->
     <link rel="stylesheet" href="/css/bootstrap-select.min.css">
     <link rel="stylesheet" href="/css/stylesheet.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/pics/faviconlogo1.png" sizes="16x16">
+	<link rel="icon" type="image/png" href="/pics/faviconlogo2.png" sizes="32x32">
 
 
 @yield('topscript')
