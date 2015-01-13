@@ -144,18 +144,21 @@
                     position: new google.maps.LatLng(loc.lat, loc.long),
                     map: map,
                 });
+                var beerInventory = '';
                 for (var i = 0; i < loc.beers.length; i++) {
                 	var beer_name = loc.beers[i].beer_name;
                 	var beer_style = loc.beers[i].beer_style;
                 	var brewery = loc.beers[i].brewery.name;
-                	console.log(loc.beers[i].brewery.name);
+                	// console.log(loc.beers[i].brewery.name);
+                	var beerInventory = beerInventory + " " + beer_name + " " + beer_style + " " + brewery + "<br>";
                 };
+                console.log(beerInventory);
 
                 var contentString = '<div id="content">'+
 				    '<div id="siteNotice">'+
 				    '</div>'+
-				    '<h3 id="firstHeading" class="firstHeading">'+loc.establishment+'</h3>'+
-				    '<p id="beerInventory" class="beerInventory">'+beer_name+ ' ' +beer_style + brewery+ '</p>'+
+				    '<h3 id="firstHeading" class="firstHeading">'+ loc.establishment +'</h3>'+
+				    '<p id="beerInventory" class="beerInventory">'+ beerInventory + '</p>'+
 				    '</div>';
 
 

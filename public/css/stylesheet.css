@@ -338,5 +338,13 @@ h3 {
 	font-style: italic;
 }
 
+.firstHeading{
+	color: black;
+}
+
+.beerInventory{
+	color: black;
+}
+
 /*END CSS FOR FOOTER*/
 
