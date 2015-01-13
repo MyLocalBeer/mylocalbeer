@@ -100,6 +100,16 @@ h3 {
 .searchresults{
 	font-family: 'Abel', sans-serif;
 	font-size: 20px;
+	text-align: center;
+}
+
+#results{
+	margin-right: 70px;
+	font-size: 2em;
+}
+
+#findbeer{
+	background: url('/pics/purty_wood.png');
 }
 
 /*END CSS FOR HELLO.BLADE*/
@@ -130,7 +140,7 @@ h3 {
 .brewery-name {
 	font-family: 'Droid Serif', serif;
 	font-size: 2em;	
-	color: #f8f1dd;
+	color: white;
 	text-align: center;
 }
 
@@ -147,12 +157,12 @@ h3 {
 
 
 #link:link{
-	color: #f8f1dd;
+	color: white;
 }
 
 #link:hover{
 	text-decoration: none; 
-	color: black;
+	color: black !important;
 }
 
 #link:visited{
@@ -203,6 +213,7 @@ h3 {
 .modal-background{
 	background-image: url('/pics/purty_wood.png');
 }
+
 /*END CSS FOR BREWERIES.BLADE*/
 
 #modal-content{
@@ -242,9 +253,38 @@ h3 {
 .beerdescription{
 	font-family: 'Abel', sans-serif;
 	color: black;
-	font-size: 2em;
-
+	font-size: 20px;
 }
+
+.brewerylink:hover{
+	color: white !important;
+	text-decoration: none;
+}
+
+.brewerylink:active{
+	color: white;
+}
+
+.brewerylink:visited{
+	color: black;
+	text-decoration: none;
+}
+
+.brewerylink:link{
+	color: black;
+}
+
+.bybrewery{
+	font-family: 'Droid Serif', serif;
+	font-size: 15px;	
+	color: white;
+	text-align: center;
+}
+
+#blacktext{
+	color:black;
+}
+
 
 /*END CSS FOR BEERS INDEX*/
 
@@ -280,5 +320,19 @@ h3 {
 }
 /*END CSS FOR WELCOME PAGE*/
 
+/*START CSS FOR FOOTER*/
 
+.footer{
+	height: 60px;
+	background-color: black;
+	text-align: center;
+	padding-top: 25px;
+}
+
+.copyright{
+	font-size: 10px;
+	font-style: italic;
+}
+
+/*END CSS FOR FOOTER*/
 
