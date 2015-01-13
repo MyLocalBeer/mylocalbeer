@@ -20,12 +20,12 @@
                     </div>
                 </div>          
                 <div class='row'>    
-                    <div class='col-md-4 col-md-offset-4 text-center brewery-info brewery-location abel-font '>
+                    <div class='col-md-4 col-md-offset-4 text-center brewery-info brewery-location'>
                         <a id='link' class='droid' href="{{ $brewery->website }}">Visit {{ $brewery->name }}'s website</a>
                     </div>
                 </div>
                 <div class='row'>
-                    <div class='col-md-4 col-md-offset-4 text-center brewery-location brewery-info droid'>
+                    <div class='col-md-4 col-md-offset-4 text-center brewery-location droid'>
                         {{ $brewery->streetAddress}}
 
                         {{ $brewery->locality }}

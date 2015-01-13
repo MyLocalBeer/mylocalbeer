@@ -47,13 +47,12 @@
 	</div>
 
 <div id='search'>
+	<a name='find'></a>
 	<div class='container'>
-		<a name='find'></a>
-
+		
 			<div class='row'>
 				<img class='center-block' id='thesearch' src="/pics/thesearch.png">
 			</div>
-		
 		
 			<div role="navigation">
 			      {{ Form::open(['action' => ['HomeController@index'], 'method' => 'GET', 'name' => 'search',]) }}
@@ -68,7 +67,6 @@
 			    	{{ Form::close() }}
 			
 		</div>
-
 
 		<div class='row'>
 			<div class="col-md-6 map" id="map-canvas"></div>
@@ -90,6 +88,8 @@
 		</div>
 	</div>
 </div>
+
+<a name='theteam'></a>
 
 <div id='about'>
 	<p class='lobster-text'>Meet the Team</p>
@@ -118,7 +118,6 @@
 		</div>
 	</div>
 </div>
-
 
 @stop
 

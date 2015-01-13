@@ -42,11 +42,12 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li><a href="/">Home <span class="sr-only"></span></a></li>
-          <li><a href="/#TheHow">The How <span class="sr-only"></span></a></li>
-          <li><a href="/#find">Find <span class="sr-only"></span></a></li>
-          <li><a href="/beers/">The Beer <span class="sr-only"></span></a></li>
-          <li><a href="/breweries/">The Breweries <span class="sr-only"></span></a></li>
+          <li><a href="/"> Home <span class="sr-only"></span></a></li>
+          <li><a href="/#TheHow"> The How <span class="sr-only"></span></a></li>
+          <li><a href="/#find"> Find <span class="sr-only"></span></a></li>
+          <li><a href="/beers/"> The Beer <span class="sr-only"></span></a></li>
+          <li><a href="/breweries/"> The Breweries <span class="sr-only"></span></a></li>
+          <li><a href='#theteam'> The Team <span class='sr-only'></span></a></li>
 
         @if (Entrust::can('can_create_beer'))
           <li class="dropdown">
