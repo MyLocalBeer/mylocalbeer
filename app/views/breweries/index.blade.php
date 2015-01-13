@@ -10,22 +10,22 @@
             <article>
                 <div class=''>
                     <div class='row'>
-                        <div class="brewery-name col-md-4 col-md-offset-4">
-                            <div><a href="/breweries/<?echo $brewery->id?>"><? echo $brewery->name?></a></div>
+                        <div class="beertitle text-center col-md-6 col-md-offset-3">
+                            <div><a class='brewerylink' href="/breweries/<?echo $brewery->id?>"><? echo $brewery->name?></a></div>
                         </div>
                     </div>
                 <div class='row'>    
-                    <div class='col-md-4 col-md-offset-4 text-center '>
+                    <div class='col-md-6 col-md-offset-3 text-center'>
                         <img class='brewery-pic' src="{{ $brewery->image }}">
                     </div>
                 </div>          
                 <div class='row'>    
-                    <div class='col-md-4 col-md-offset-4 text-center brewery-info brewery-location abel-font '>
+                    <div class='col-md-4 col-md-offset-4 text-center brewery-info brewery-location'>
                         <a id='link' class='droid' href="{{ $brewery->website }}">Visit {{ $brewery->name }}'s website</a>
                     </div>
                 </div>
                 <div class='row'>
-                    <div class='col-md-4 col-md-offset-4 text-center brewery-location brewery-info droid'>
+                    <div class='col-md-4 col-md-offset-4 text-center brewery-location droid'>
                         {{ $brewery->streetAddress}}
 
                         {{ $brewery->locality }}

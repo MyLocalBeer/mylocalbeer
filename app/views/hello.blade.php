@@ -47,13 +47,12 @@
 	</div>
 
 <div id='search'>
+	<a name='find'></a>
 	<div class='container'>
-		<a name='find'></a>
-
+		
 			<div class='row'>
 				<img class='center-block' id='thesearch' src="/pics/thesearch.png">
 			</div>
-		
 		
 			<div role="navigation">
 			      {{ Form::open(['action' => ['HomeController@index'], 'method' => 'GET', 'name' => 'search',]) }}
@@ -68,14 +67,16 @@
 			    	{{ Form::close() }}
 			
 		</div>
+
 		<div class='row'>
 			<div class="col-md-6 map" id="map-canvas"></div>
+				<p  id='results' class='lobster'>What's Near You... </p>
 				@if(!empty($var))
 					@foreach($locations as $location)
-				        <div id='breweries'>
+				        <div id='breweries' >
 				            <article>
-				                <div class='name-local'>					         
-				                    <div class='col-md-4 searchresults'>
+				                <div class='name-local' id='findbeer'>					         
+				                    <div class='col-md-4 col-md-offset-1 text-center searchresults'>
 				                        {{ $location->establishment }}
 				                    </div>
 				                </div>
@@ -88,15 +89,17 @@
 	</div>
 </div>
 
+<a name='theteam'></a>
+
 <div id='about'>
 	<p class='lobster-text'>Meet the Team</p>
 
 	<div class='row'>
 		<div class='col-md-4 text-center'>
-			<img class='img-circle center-image' src="/pics/johnny.png">
+			<img class='img-circle center-image' src="/pics/liz.png">
 		</div>
 		<div class='col-md-4 text-center'>
-			<img class='img-circle center-image' src="/pics/liz.png">
+			<img class='img-circle center-image' src="/pics/johnny.png">
 		</div>
 		<div class='col-md-4 text-center'>
 			<img class='img-circle center-image' src="/pics/jason.png">
@@ -105,17 +108,16 @@
 
 	<div class='row'>
 		<div class='col-md-4 text-center droid-serif'>
-			Johnny Staudt
+			Liz Cole
 		</div>
 		<div class='col-md-4 text-center droid-serif'>
-			Liz Cole
+			Johnny Staudt
 		</div>
 		<div class='col-md-4 text-center droid-serif'>
 			Jason Birdwell
 		</div>
 	</div>
 </div>
-
 
 @stop
 

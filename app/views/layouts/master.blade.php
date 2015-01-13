@@ -33,6 +33,9 @@
 		@yield('content')
     </div>
 
+    @yield('footer')
+    	@include('partials.footer')
+
     <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 	
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>

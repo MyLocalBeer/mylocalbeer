@@ -4,7 +4,7 @@ body {
 	/*Background image compliments of subtlepatterns.com*/
 	background-image: url('/pics/black_paper.png');
 	background-attachment: fixed;
-	color: white;
+	color: #fcfbf9;
 	margin-top: 40px;
 }
 /*end css for master*/
@@ -24,7 +24,7 @@ body {
 
 h3 {
 	font-family: 'Lobster', cursive;
-	color: #dfdfdd;
+	color: #fcfbf9;
 	font-size: 3em;
 }
 
@@ -46,7 +46,7 @@ h3 {
 }
 
 #thehow{
-	margin-top: 20px;
+	margin-top: 10px;
 	background-image: url("/pics/purty_wood.png");
 	width: 100%;
 	height: 640px;
@@ -100,6 +100,16 @@ h3 {
 .searchresults{
 	font-family: 'Abel', sans-serif;
 	font-size: 20px;
+	text-align: center;
+}
+
+#results{
+	margin-right: 70px;
+	font-size: 2em;
+}
+
+#findbeer{
+	background: url('/pics/purty_wood.png');
 }
 
 /*END CSS FOR HELLO.BLADE*/
@@ -130,7 +140,7 @@ h3 {
 .brewery-name {
 	font-family: 'Droid Serif', serif;
 	font-size: 2em;	
-	color: #f8f1dd;
+	color: #fcfbf9;
 	text-align: center;
 }
 
@@ -147,17 +157,17 @@ h3 {
 
 
 #link:link{
-	color: #f8f1dd;
+	color: #fcfbf9;
 }
 
 #link:hover{
 	text-decoration: none; 
-	color: black;
+	color: black !important;
 }
 
 #link:visited{
 	text-decoration: none;
-	color: #f8f1dd;
+	color: #fcfbf9;
 }
 
 #link:active{
@@ -174,7 +184,7 @@ h3 {
 }
 
 .brewery-location{
-	text-align: center;
+	color:#fcfbf9;
 }
 
 .website{
@@ -203,6 +213,11 @@ h3 {
 .modal-background{
 	background-image: url('/pics/purty_wood.png');
 }
+
+.editbeer{
+	margin-top: 20px;
+}
+
 /*END CSS FOR BREWERIES.BLADE*/
 
 #modal-content{
@@ -242,9 +257,38 @@ h3 {
 .beerdescription{
 	font-family: 'Abel', sans-serif;
 	color: black;
-	font-size: 2em;
-
+	font-size: 20px;
 }
+
+.brewerylink:hover{
+	color: white !important;
+	text-decoration: none;
+}
+
+.brewerylink:active{
+	color: #fcfbf9;
+}
+
+.brewerylink:visited{
+	color: black;
+	text-decoration: none;
+}
+
+.brewerylink:link{
+	color: black;
+}
+
+.bybrewery{
+	font-family: 'Droid Serif', serif;
+	font-size: 15px;	
+	color: #fcfbf9;
+	text-align: center;
+}
+
+#blacktext{
+	color:black;
+}
+
 
 /*END CSS FOR BEERS INDEX*/
 
@@ -269,7 +313,7 @@ h3 {
 .droid-serif{
 	font-family: 'Droid Serif', serif;
 	font-size: 2em;
-	color: white;
+	color: #fcfbf9;
 }
 
 .lobster{
@@ -280,5 +324,19 @@ h3 {
 }
 /*END CSS FOR WELCOME PAGE*/
 
+/*START CSS FOR FOOTER*/
 
+.footer{
+	height: 60px;
+	background-color: black;
+	text-align: center;
+	padding-top: 25px;
+}
+
+.copyright{
+	font-size: 10px;
+	font-style: italic;
+}
+
+/*END CSS FOR FOOTER*/
 

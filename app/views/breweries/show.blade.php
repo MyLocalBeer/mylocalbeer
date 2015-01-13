@@ -8,18 +8,23 @@
             <article>
                 <div class=''>
                     <div class='row'>
-                        <div class="brewery-name col-md-4 col-md-offset-4">
+                        <div class="beertitle text-center col-md-6 col-md-offset-3">
                             {{ $brewery->name }}
                         </div>
                     </div>
                 </div>
                 <div class='row'>    
+                    <div class='col-md-4 col-md-offset-4 brewery-info abel-font'>
+                        <img class='brewery-pic' src="{{ $brewery->image }}">
+                    </div>
+                </div>   
+                <div class='row'>    
                     <div class='col-md-4 col-md-offset-4 brewery-info brewery-location abel-font'>
-                        <a href="{{ $brewery->website }}">visit {{ $brewery->name }}</a>
+                        <a id='link' class='droid' href="{{ $brewery->website }}">visit {{ $brewery->name }}</a>
                     </div>
                 </div>
                 <div class='row'>
-                    <div class='col-md-4 col-md-offset-4 brewery-location brewery-info abel-font'>
+                    <div class='col-md-4 col-md-offset-4 brewery-location brewery-info droid'>
                         {{ $brewery->streetAddress}}
 
                         {{ $brewery->locality }}
@@ -31,13 +36,9 @@
                         <p>Established {{ $brewery->yearOpened }}</p>
                     </div>
                 </div>
+                  
                 <div class='row'>    
-                    <div class='col-md-4 col-md-offset-4 brewery-info abel-font'>
-                        <img src="{{ $brewery->image }}">
-                    </div>
-                </div>                    
-                <div class='row'>    
-                    <div class='col-md-10 col-md-offset-1 brewery-info brewery-story'>
+                    <div class='col-md-10 col-md-offset-1 text-center brewery-info brewery-story'>
                         {{ $brewery->story }}
                     </div>
                 </div>
@@ -90,13 +91,6 @@
               </div>
             </article>
         </div>
-
-        <div class='row'>   
-            <div class='col-md-6 col-md-offset-3 text-center'>
-                     <input name='rating' id="input-id" type="integer" class="rating" min="0" max="5" step="1" data-size="sm" > 
-                    <button id='rating' type='submit' class='btn btn-info btn-sm'>Rate</button>
-            </div>
-        </div> 
 
         <div class='row'>
             <div class='col-md-6 col-md-offset-3'>

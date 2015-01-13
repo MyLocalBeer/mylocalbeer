@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('content')
 
-<div>
+<div class='editbeer'>
 	{{ Form::model($beer, (array('action' => ['BeersController@update', $beer->id], 'method' => 'PUT'))) }}
 		<div class="form-group row">
 			<div class='col-md-3 col-md-offset-4'>
@@ -12,8 +12,23 @@
 		</div>
 		<div class="form-group row">
 			<div class='col-md-2 col-md-offset-4'>
-				{{ Form::label('beer_style', 'Style') }}
-				{{ Form::text('beer_style', Input::old('beer_style'), array('class'=>'form-control')) }}
+				<select class="form-control" name="beer_style" id="beer_style">
+				  <option value="" selected disabled>Beer Style</option>
+				<optgroup label="ALES">
+				  <option>Abbey Ale</option>
+				  <option>Pale Ale</option>
+				  <option>India Pale Ale (IPA)</option>
+				  <option>Porter</option>
+				  <option>Stout</option>
+				  <option>Weiss</option>
+				  <option>Wit - White</option>
+				<optgroup label="LAGERS">
+				  <option>Amber Lager</option>
+				  <option>Doppelbock</option>
+				  <option>Dunkel</option>
+				  <option>Pilsner</option>
+				  <option>Light</option>
+				</select>
 				{{ $errors->first('beer_style', '<span class="help-block">Style Is Required</span>'); }}
 			</div>
 		</div>
@@ -39,13 +54,6 @@
 				{{ Form::label('description', 'Description') }}
 				{{ Form::textarea('description', Input::old('description'), array('cols'=>'50', 'rows'=>'10', 'class'=>'form-control')) }}
 				{{ $errors->first('description', '<span class="help-block">Description Is Required</span>'); }}
-			</div>
-		</div>
-		<div class="form-group row">
-			<div class='col-md-1 col-md-offset-4'>
-				{{ Form::label('brewery_id', 'Brewery_id') }}
-				{{ Form::text('brewery_id', Input::old('brewery_id'), array('class'=>'form-control')) }}
-				{{ $errors->first('brewery_id', '<span class="help-block">Description Is Required</span>'); }}
 			</div>
 		</div>
 
